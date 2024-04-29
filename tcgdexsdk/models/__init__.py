@@ -79,26 +79,30 @@ class Card(Model):
     legal: Legal
     """the card ability to be played in tournaments"""
 
-    def get_image_url(self, quality: str | Quality, extension: str | Extension) -> str:
+    def get_image_url(
+            self, quality: str | Quality, extension: str | Extension
+    ) -> Optional[str]:
         """
         the Card Image full URL
         @param quality: the quality you want your image to be in
         @param extension: extension you want you image to be
         @return: the full card URL with the extension and quality
         """
-        return f"{self.image}/{quality}.{extension}"
+        if self.image:
+            return f"{self.image}/{quality}.{extension}"
 
     # noinspection PyShadowingBuiltins
     def get_image(
             self, quality: str | Quality, format: str | Extension
-    ) -> HTTPResponse:
+    ) -> Optional[HTTPResponse]:
         """
         Get image buffer
         @param quality: the quality you want your image to be in
         @param format: extension you want you image to be
         @return: the full card Buffer in the format you want
         """
-        return utils.download_image(self.get_image_url(quality, format))
+        if url := self.get_image_url(quality, format):
+            return utils.download_image(url)
 
 
 @dataclass
@@ -116,26 +120,30 @@ class CardResume(Model):
     image: Optional[str]
     """Card image url without the extension and quality"""
 
-    def get_image_url(self, quality: str | Quality, extension: str | Extension) -> str:
+    def get_image_url(
+            self, quality: str | Quality, extension: str | Extension
+    ) -> Optional[str]:
         """
         the Card Image full URL
         @param quality: the quality you want your image to be in
         @param extension: extension you want you image to be
         @return: the full card URL with the extension and quality
         """
-        return f"{self.image}/{quality}.{extension}"
+        if self.image:
+            return f"{self.image}/{quality}.{extension}"
 
     # noinspection PyShadowingBuiltins
     def get_image(
             self, quality: str | Quality, format: str | Extension
-    ) -> HTTPResponse:
+    ) -> Optional[HTTPResponse]:
         """
         Get image buffer
         @param quality: the quality you want your image to be in
         @param format: extension you want you image to be
         @return: the full card Buffer in the format you want
         """
-        return utils.download_image(self.get_image_url(quality, format))
+        if url := self.get_image_url(quality, format):
+            return utils.download_image(url)
 
     def get_full_card(self) -> Optional[Card]:
         """
@@ -168,14 +176,14 @@ class Serie(Model):
             return f"{self.logo}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_logo(self, format: str | Extension) -> HTTPResponse:
+    def get_logo(self, format: str | Extension) -> Optional[HTTPResponse]:
         """
         Get the logo buffer
         @param format: the image format
         @return: a buffer containing the image
         """
-        if logo := self.get_logo_url(format):
-            return utils.download_image(logo)
+        if url := self.get_logo_url(format):
+            return utils.download_image(url)
 
 
 @dataclass
@@ -199,14 +207,14 @@ class SerieResume(Model):
             return f"{self.logo}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_logo(self, format: str | Extension) -> HTTPResponse:
+    def get_logo(self, format: str | Extension) -> Optional[HTTPResponse]:
         """
         Get the logo buffer
         @param format: the image format
         @return: a buffer containing the image
         """
-        if logo := self.get_logo_url(format):
-            return utils.download_image(logo)
+        if url := self.get_logo_url(format):
+            return utils.download_image(url)
 
     def get_full_series(self) -> Optional[Serie]:
         """
@@ -251,14 +259,14 @@ class Set(Model):
             return f"{self.logo}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_logo(self, format: str | Extension) -> HTTPResponse:
+    def get_logo(self, format: str | Extension) -> Optional[HTTPResponse]:
         """
         Get the logo buffer
         @param format: the image format
         @return: a buffer containing the image
         """
-        if logo := self.get_logo_url(format):
-            return utils.download_image(logo)
+        if url := self.get_logo_url(format):
+            return utils.download_image(url)
 
     def get_symbol_url(self, extension: str | Extension) -> Optional[str]:
         """
@@ -270,14 +278,14 @@ class Set(Model):
             return f"{self.symbol}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_symbol(self, format: str | Extension) -> HTTPResponse:
+    def get_symbol(self, format: str | Extension) -> Optional[HTTPResponse]:
         """
         Get the symbol buffer
         @param format: the image format
         @return: a buffer containing the image
         """
-        if symbol := self.get_symbol_url(format):
-            return utils.download_image(symbol)
+        if url := self.get_symbol_url(format):
+            return utils.download_image(url)
 
 
 @dataclass
@@ -305,14 +313,14 @@ class SetResume(Model):
             return f"{self.logo}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_logo(self, format: str | Extension) -> HTTPResponse:
+    def get_logo(self, format: str | Extension) -> Optional[HTTPResponse]:
         """
         Get the logo buffer
         @param format: the image format
         @return: a buffer containing the image
         """
-        if logo := self.get_logo_url(format):
-            return utils.download_image(logo)
+        if url := self.get_logo_url(format):
+            return utils.download_image(url)
 
     def get_symbol_url(self, extension: str | Extension) -> Optional[str]:
         """
@@ -324,14 +332,14 @@ class SetResume(Model):
             return f"{self.symbol}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_symbol(self, format: str | Extension) -> HTTPResponse:
+    def get_symbol(self, format: str | Extension) -> Optional[HTTPResponse]:
         """
         Get the symbol buffer
         @param format: the image format
         @return: a buffer containing the image
         """
-        if symbol := self.get_symbol_url(format):
-            return utils.download_image(symbol)
+        if url := self.get_symbol_url(format):
+            return utils.download_image(url)
 
     def get_full_set(self) -> Optional[Set]:
         """
