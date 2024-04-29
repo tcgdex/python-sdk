@@ -19,6 +19,7 @@ class Language(StrEnum):
 
 class Extension(StrEnum):
     """The different extension an image is available in"""
+
     PNG = auto()
     """.png image, with transparent background"""
     JPG = auto()
@@ -32,6 +33,7 @@ class Quality(StrEnum):
     Image quality if applicable
     (only cards does have quality selector)
     """
+
     HIGH = auto()
     """the string representation of the quality"""
     LOW = auto()

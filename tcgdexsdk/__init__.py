@@ -292,4 +292,8 @@ class TCGdex:
         return self.fetch(StringEndpoint, "hp", hp)
 
     def fetch(self, cls: type[_T], *paths: str) -> Optional[_T]:
-        return utils.fetch(self, f"{self.URI}/{self.language}/{'/'.join(paths)}".replace(" ", "%20"), cls, )
+        return utils.fetch(
+            self,
+            f"{self.URI}/{self.language}/{'/'.join(paths)}".replace(" ", "%20"),
+            cls,
+        )

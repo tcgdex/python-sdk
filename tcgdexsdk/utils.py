@@ -19,7 +19,7 @@ ttl = 60
 
 
 def _request(url: str) -> Request:
-    return Request(url, headers={"User-Agent": "@HellLord77/python-sdk"})
+    return Request(url, headers={"User-Agent": f"@HellLord77/python-sdk"})
 
 
 @lru_cache

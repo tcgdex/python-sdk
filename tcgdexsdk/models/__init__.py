@@ -21,6 +21,7 @@ from tcgdexsdk.models.subs import SetCardCountResume
 @dataclass
 class Card(Model):
     """Pokémon TCG Card, It contains every informations about a specific card"""
+
     id: str
     """Globally unique card ID based on the set ID and the cards ID within the set"""
     localId: str
@@ -88,7 +89,9 @@ class Card(Model):
         return f"{self.image}/{quality}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_image(self, quality: str | Quality, format: str | Extension) -> HTTPResponse:
+    def get_image(
+            self, quality: str | Quality, format: str | Extension
+    ) -> HTTPResponse:
         """
         Get image buffer
         @param quality: the quality you want your image to be in
@@ -103,6 +106,7 @@ class CardResume(Model):
     """Card Resume class, contains basic informations about a specific card
 
     to get the full card you can use the `get_full_card()` function"""
+
     id: str
     """Globally unique card ID based on the set ID and the cards ID within the set"""
     localId: str
@@ -122,7 +126,9 @@ class CardResume(Model):
         return f"{self.image}/{quality}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_image(self, quality: str | Quality, format: str | Extension) -> HTTPResponse:
+    def get_image(
+            self, quality: str | Quality, format: str | Extension
+    ) -> HTTPResponse:
         """
         Get image buffer
         @param quality: the quality you want your image to be in
@@ -142,6 +148,7 @@ class CardResume(Model):
 @dataclass
 class Serie(Model):
     """Pokémon TCG Serie"""
+
     sets: list[SetResume]
     """the list of sets the Serie contains"""
     id: str
@@ -174,6 +181,7 @@ class Serie(Model):
 @dataclass
 class SerieResume(Model):
     """Serie Resume"""
+
     id: str
     """the Serie unique ID"""
     name: str
@@ -211,6 +219,7 @@ class SerieResume(Model):
 @dataclass
 class Set(Model):
     """Pokémon TCG Set class"""
+
     id: str
     """Globally unique set ID"""
     name: str
@@ -274,6 +283,7 @@ class Set(Model):
 @dataclass
 class SetResume(Model):
     """Set resume"""
+
     id: str
     """Globally unique set ID"""
     name: str
@@ -334,6 +344,7 @@ class SetResume(Model):
 @dataclass
 class StringEndpoint(Model):
     """Generix class that handle a lot of Endpoints"""
+
     name: str
     """the endpoint value"""
     cards: list[CardResume]

@@ -5,6 +5,7 @@ from typing import Optional
 @dataclass
 class CardAbility:
     """Describes a single ability of a pokemon"""
+
     type: str
     """The Ability type (language dependant)"""
     name: Optional[str]
@@ -16,6 +17,7 @@ class CardAbility:
 @dataclass
 class CardAttack:
     """Describes a single attack of a pokemon, for example 'Confuse Ray'"""
+
     name: Optional[str]
     """Name of the attack"""
     cost: Optional[list[str]]
@@ -29,6 +31,7 @@ class CardAttack:
 @dataclass
 class CardItem:
     """Card Item"""
+
     name: Optional[str]
     """the Item name"""
     effect: Optional[str]
@@ -38,6 +41,7 @@ class CardItem:
 @dataclass
 class CardVariants:
     """Card variants"""
+
     normal: bool
     """basic variant no special effects"""
     reverse: bool
@@ -53,6 +57,7 @@ class CardVariants:
 @dataclass
 class CardWeakRes:
     """Describes the weakness/resistance of a single pokemon, for example: 2x to Fire"""
+
     type: str
     """the affecting type"""
     value: Optional[str]
@@ -65,6 +70,7 @@ class Legal:
     Card Legality
     _note: cards are always usable in the unlimited tournaments_
     """
+
     standard: bool
     """card is usable in standard tournaments"""
     expanded: bool
@@ -74,6 +80,7 @@ class Legal:
 @dataclass
 class SetCardCount:
     """Set card count"""
+
     total: int
     """total of number of cards"""
     official: int
@@ -91,6 +98,7 @@ class SetCardCount:
 @dataclass
 class SetCardCountResume:
     """Set card count resume"""
+
     total: int
     """total of number of cards"""
     official: int
