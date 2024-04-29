@@ -19,8 +19,10 @@ from tcgdexsdk.models.subs import SetCardCountResume
 
 
 @dataclass
-class Card(Model):
-    """Pokémon TCG Card, It contains every informations about a specific card"""
+class CardResume(Model):
+    """Card Resume class, contains basic informations about a specific card
+
+    to get the full card you can use the `get_full_card()` function"""
 
     id: str
     """Globally unique card ID based on the set ID and the cards ID within the set"""
@@ -30,6 +32,44 @@ class Card(Model):
     """Card name"""
     image: Optional[str]
     """Card image url without the extension and quality"""
+
+    def get_image_url(
+            self, quality: str | Quality, extension: str | Extension
+    ) -> Optional[str]:
+        """
+        the Card Image full URL
+        @param quality: the quality you want your image to be in
+        @param extension: extension you want you image to be
+        @return: the full card URL with the extension and quality
+        """
+        if self.image:
+            return f"{self.image}/{quality}.{extension}"
+
+    # noinspection PyShadowingBuiltins
+    def get_image(
+            self, quality: str | Quality, format: str | Extension
+    ) -> Optional[HTTPResponse]:
+        """
+        Get image buffer
+        @param quality: the quality you want your image to be in
+        @param format: extension you want you image to be
+        @return: the full card Buffer in the format you want
+        """
+        if url := self.get_image_url(quality, format):
+            return utils.download_image(url)
+
+    def get_full_card(self) -> Optional[Card]:
+        """
+        Get the full Card
+        @return: the full card if available
+        """
+        return self.tcgdex.fetch_card(self.id)
+
+
+@dataclass
+class Card(CardResume):
+    """Pokémon TCG Card, It contains every informations about a specific card"""
+
     illustrator: Optional[str]
     """Card illustrator"""
     rarity: str
@@ -79,112 +119,6 @@ class Card(Model):
     legal: Legal
     """the card ability to be played in tournaments"""
 
-    def get_image_url(
-            self, quality: str | Quality, extension: str | Extension
-    ) -> Optional[str]:
-        """
-        the Card Image full URL
-        @param quality: the quality you want your image to be in
-        @param extension: extension you want you image to be
-        @return: the full card URL with the extension and quality
-        """
-        if self.image:
-            return f"{self.image}/{quality}.{extension}"
-
-    # noinspection PyShadowingBuiltins
-    def get_image(
-            self, quality: str | Quality, format: str | Extension
-    ) -> Optional[HTTPResponse]:
-        """
-        Get image buffer
-        @param quality: the quality you want your image to be in
-        @param format: extension you want you image to be
-        @return: the full card Buffer in the format you want
-        """
-        if url := self.get_image_url(quality, format):
-            return utils.download_image(url)
-
-
-@dataclass
-class CardResume(Model):
-    """Card Resume class, contains basic informations about a specific card
-
-    to get the full card you can use the `get_full_card()` function"""
-
-    id: str
-    """Globally unique card ID based on the set ID and the cards ID within the set"""
-    localId: str
-    """ID indexing this card within its set, usually just its number"""
-    name: str
-    """Card name"""
-    image: Optional[str]
-    """Card image url without the extension and quality"""
-
-    def get_image_url(
-            self, quality: str | Quality, extension: str | Extension
-    ) -> Optional[str]:
-        """
-        the Card Image full URL
-        @param quality: the quality you want your image to be in
-        @param extension: extension you want you image to be
-        @return: the full card URL with the extension and quality
-        """
-        if self.image:
-            return f"{self.image}/{quality}.{extension}"
-
-    # noinspection PyShadowingBuiltins
-    def get_image(
-            self, quality: str | Quality, format: str | Extension
-    ) -> Optional[HTTPResponse]:
-        """
-        Get image buffer
-        @param quality: the quality you want your image to be in
-        @param format: extension you want you image to be
-        @return: the full card Buffer in the format you want
-        """
-        if url := self.get_image_url(quality, format):
-            return utils.download_image(url)
-
-    def get_full_card(self) -> Optional[Card]:
-        """
-        Get the full Card
-        @return: the full card if available
-        """
-        return self.tcgdex.fetch_card(self.id)
-
-
-@dataclass
-class Serie(Model):
-    """Pokémon TCG Serie"""
-
-    sets: list[SetResume]
-    """the list of sets the Serie contains"""
-    id: str
-    """the Serie unique ID"""
-    name: str
-    """the Serie name"""
-    logo: Optional[str]
-    """the Serie Logo (basically also the first set logo)"""
-
-    def get_logo_url(self, extension: str | Extension) -> Optional[str]:
-        """
-        Get the logo full url
-        @param extension: the file extension you want to use
-        @return: the full URL of the logo
-        """
-        if self.logo:
-            return f"{self.logo}.{extension}"
-
-    # noinspection PyShadowingBuiltins
-    def get_logo(self, format: str | Extension) -> Optional[HTTPResponse]:
-        """
-        Get the logo buffer
-        @param format: the image format
-        @return: a buffer containing the image
-        """
-        if url := self.get_logo_url(format):
-            return utils.download_image(url)
-
 
 @dataclass
 class SerieResume(Model):
@@ -225,67 +159,11 @@ class SerieResume(Model):
 
 
 @dataclass
-class Set(Model):
-    """Pokémon TCG Set class"""
+class Serie(SerieResume):
+    """Pokémon TCG Serie"""
 
-    id: str
-    """Globally unique set ID"""
-    name: str
-    """the Set mame"""
-    logo: Optional[str]
-    """the Set Logo incomplete URL (use get_logo_url/get_logo)"""
-    symbol: Optional[str]
-    """the Set Symbol imcomplete URL (use get_symbol_url/get_symbol)"""
-    serie: SerieResume
-    """the serie this set is a part of"""
-    tcgOnline: Optional[str]
-    """the TCG Online Code"""
-    releaseDate: str
-    """the Set release date as yyyy-mm-dd"""
-    legal: Legal
-    """the set legality (won't indicate if a card is banned)"""
-    cardCount: SetCardCount
-    """the number of card in the set"""
-    cards: list[CardResume]
-    """the cards contained in this set"""
-
-    def get_logo_url(self, extension: str | Extension) -> Optional[str]:
-        """
-        Get the logo full url
-        @param extension: the file extension you want to use
-        @return: the full URL of the logo
-        """
-        if self.logo:
-            return f"{self.logo}.{extension}"
-
-    # noinspection PyShadowingBuiltins
-    def get_logo(self, format: str | Extension) -> Optional[HTTPResponse]:
-        """
-        Get the logo buffer
-        @param format: the image format
-        @return: a buffer containing the image
-        """
-        if url := self.get_logo_url(format):
-            return utils.download_image(url)
-
-    def get_symbol_url(self, extension: str | Extension) -> Optional[str]:
-        """
-        Get the symbol full url
-        @param extension: the file extension you want to use
-        @return: the full URL of the logo
-        """
-        if self.symbol:
-            return f"{self.symbol}.{extension}"
-
-    # noinspection PyShadowingBuiltins
-    def get_symbol(self, format: str | Extension) -> Optional[HTTPResponse]:
-        """
-        Get the symbol buffer
-        @param format: the image format
-        @return: a buffer containing the image
-        """
-        if url := self.get_symbol_url(format):
-            return utils.download_image(url)
+    sets: list[SetResume]
+    """the list of sets the Serie contains"""
 
 
 @dataclass
@@ -347,6 +225,22 @@ class SetResume(Model):
         @return: the full set if available
         """
         return self.tcgdex.fetch_set(self.id)
+
+
+@dataclass
+class Set(SetResume):
+    """Pokémon TCG Set class"""
+
+    serie: SerieResume
+    """the serie this set is a part of"""
+    tcgOnline: Optional[str]
+    """the TCG Online Code"""
+    releaseDate: str
+    """the Set release date as yyyy-mm-dd"""
+    legal: Legal
+    """the set legality (won't indicate if a card is banned)"""
+    cards: list[CardResume]
+    """the cards contained in this set"""
 
 
 @dataclass

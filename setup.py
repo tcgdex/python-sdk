@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="tcgdexsdk",
-    version="1.0.1",
+    version="1.1.0",
     packages=find_packages(),
     author="HellLord77",
     author_email="ratul.debnath.year@gmail.com",
