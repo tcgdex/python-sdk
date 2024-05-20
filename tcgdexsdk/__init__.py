@@ -42,7 +42,6 @@ class TCGdex:
         @param card: the card ID
         @return: The card
         """
-        pass
 
     # noinspection PyShadowingBuiltins
     @overload
@@ -53,7 +52,6 @@ class TCGdex:
         @param card: the card local ID
         @return: the card you want
         """
-        pass
 
     # noinspection PyShadowingBuiltins
     def fetch_card(self, set, card=None):
@@ -194,9 +192,9 @@ class TCGdex:
 
     def fetch_dex_id(self, dex_id: str) -> Optional[StringEndpoint]:
         """
-        Fetch cards by pokédex ID
-        @param dex_id: the pokédex ID you want to filter by
-        @return: a StringEndpoint containing the cards with the specified pokédex ID
+        Fetch cards by Pokédex ID
+        @param dex_id: the Pokédex ID you want to filter by
+        @return: a StringEndpoint containing the cards with the specified Pokédex ID
         """
         return self.fetch(StringEndpoint, "dex-ids", dex_id)
 
@@ -264,7 +262,7 @@ class TCGdex:
     def fetch_illustrators(self) -> Optional[list[str]]:
         """
         Fetch every cards illustrators
-        @return: the list of ilustrators
+        @return: the list of illustrators
         """
         return self.fetch(list[str], "illustrators")
 

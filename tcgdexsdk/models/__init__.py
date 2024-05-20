@@ -20,8 +20,7 @@ from tcgdexsdk.models.subs import SetCardCountResume
 
 @dataclass
 class CardResume(Model):
-    """Card Resume class, contains basic informations about a specific card
-
+    """Card Resume class, contains basic information about a specific card
     to get the full card you can use the `get_full_card()` function"""
 
     id: str
@@ -34,7 +33,7 @@ class CardResume(Model):
     """Card image url without the extension and quality"""
 
     def get_image_url(
-            self, quality: str | Quality, extension: str | Extension
+        self, quality: str | Quality, extension: str | Extension
     ) -> Optional[str]:
         """
         the Card Image full URL
@@ -47,7 +46,7 @@ class CardResume(Model):
 
     # noinspection PyShadowingBuiltins
     def get_image(
-            self, quality: str | Quality, format: str | Extension
+        self, quality: str | Quality, format: str | Extension
     ) -> Optional[HTTPResponse]:
         """
         Get image buffer
@@ -68,7 +67,7 @@ class CardResume(Model):
 
 @dataclass
 class Card(CardResume):
-    """Pokémon TCG Card, It contains every informations about a specific card"""
+    """Pokémon TCG Card, It contains every information about a specific card"""
 
     illustrator: Optional[str]
     """Card illustrator"""
@@ -177,7 +176,7 @@ class SetResume(Model):
     logo: Optional[str]
     """the Set Logo incomplete URL (use get_logo_url/get_logo)"""
     symbol: Optional[str]
-    """the Set Symbol imcomplete URL (use get_symbol_url/get_symbol)"""
+    """the Set Symbol incomplete URL (use get_symbol_url/get_symbol)"""
     cardCount: SetCardCountResume
     """the number of card in the set"""
 
@@ -245,7 +244,7 @@ class Set(SetResume):
 
 @dataclass
 class StringEndpoint(Model):
-    """Generix class that handle a lot of Endpoints"""
+    """Generic class that handle a lot of Endpoints"""
 
     name: str
     """the endpoint value"""
