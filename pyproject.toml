@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "tcgdex-sdk"
+version = "0.1.0"
+description = ""
+authors = [
+	"Avior <git@avior.me>",
+	"HellLord77"
+]
+maintainers = ["Avior <git@avior.me>"]
+classifiers = [
+	# How mature is this project? Common values are
+	#   3 - Alpha
+	#   4 - Beta
+	#   5 - Production/Stable
+	"Development Status :: 3 - Alpha",
+
+	# Indicate who your project is intended for
+	"Intended Audience :: Developers",
+	"Operating System :: OS Independent",
+
+	# Pick your license as you wish
+	"License :: OSI Approved :: MIT License",
+
+	# Specify the Python versions you support here. In particular, ensure
+	# that you indicate you support Python 3. These classifiers are *not*
+	# checked by "pip install". See instead "requires-python" key in this file.
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+	"Programming Language :: Python :: 3 :: Only",
+]
+# https://packaging.python.org/en/latest/guides/making-a-pypi-friendly-readme/
+readme = "README.md"
+packages = [{include = "tcgdex-sdk", from = "src"}]
+license = "MIT"
+
+homepage = "https://tcgdex.dev"
+documentation = "https://tcgdex.dev"
+repository = "https://github.com/tcgdex/python-sdk"
+
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+dacite = "^1.8.1"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
+"Sponsor Us !" = ""
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+vcrpy = "^6.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# pyproject.toml
+[tool.ruff]
+line-length = 120
+# exclude = ["build/", "docs/"] 
+
+[tool.ruff.lint]
+select = ["E", "F", "UP", "B", "SIM", "I"]

@@ -19,7 +19,7 @@ ttl = 60
 
 
 def _request(url: str) -> Request:
-    return Request(url, headers={"User-Agent": f"@HellLord77/python-sdk"})
+    return Request(url, headers={"User-Agent": f"@tcgdex/python-sdk"})
 
 
 @lru_cache
@@ -46,3 +46,5 @@ def fetch(tcgdex, url: str, cls: type[_T]) -> Optional[_T]:
 
 def download_image(url: str) -> HTTPResponse:
     return urllib.request.urlopen(_request(url))
+
+# lol il m'as pas sauté dessus

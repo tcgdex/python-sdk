@@ -1,9 +1,7 @@
 from typing import Optional
 from typing import overload
 
-from tcgdexsdk.enums import Extension
 from tcgdexsdk.enums import Language
-from tcgdexsdk.enums import Quality
 from tcgdexsdk.models import Card
 from tcgdexsdk.models import CardResume
 from tcgdexsdk.models import Serie
