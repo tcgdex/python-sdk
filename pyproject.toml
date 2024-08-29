@@ -34,7 +34,7 @@ classifiers = [
 ]
 # https://packaging.python.org/en/latest/guides/making-a-pypi-friendly-readme/
 readme = "README.md"
-packages = [{include = "tcgdex-sdk", from = "src"}]
+packages = [{include = "tcgdexsdk", from = "src"}]
 license = "MIT"
 
 homepage = "https://tcgdex.dev"
