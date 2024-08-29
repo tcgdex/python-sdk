@@ -1,5 +1,13 @@
-name: CI
-on: pull_request
+name: Build & Test package
+on:
+  push:
+    branches:
+      - '*'
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - master
 
 jobs:
   ci:
