@@ -3,8 +3,7 @@ from typing import Callable
 
 import vcr
 
-from tcgdexsdk import Language
-from tcgdexsdk import TCGdex
+from tcgdexsdk import Language, TCGdex
 
 
 def _use_cassette(test: Callable) -> Callable:
