@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.10.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/trainer-types
+  response:
+    body:
+      string: '["Item","Rocket''s Secret Machine","Stadium","Supporter","Technical
+        Machine","Tool"]'
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '83'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 25 Sep 2024 15:00:42 GMT
+      Etag:
+      - W/"53-Cc5FXhh8Eh3Dk37P2K12xTBGrrk"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.10.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/rarities
+  response:
+    body:
+      string: '["ACE SPEC Rare","Amazing Rare","Classic Collection","Common","Double
+        rare","Full Art Trainer","Holo Rare","Holo Rare V","Holo Rare VMAX","Holo
+        Rare VSTAR","Hyper rare","Illustration rare","LEGEND","None","Radiant Rare","Rare","Rare
+        Holo","Rare Holo LV.X","Rare PRIME","Secret Rare","Shiny Ultra Rare","Shiny
+        rare","Shiny rare V","Shiny rare VMAX","Special illustration rare","Ultra
+        Rare","Uncommon"]'
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '400'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 25 Sep 2024 15:00:36 GMT
+      Etag:
+      - W/"190-2UHzUnbXMvud7YEJ5kb4CxLDdow"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

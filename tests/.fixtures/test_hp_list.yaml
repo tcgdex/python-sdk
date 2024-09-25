@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.10.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/hp
+  response:
+    body:
+      string: '[10,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,300,310,320,330,340]'
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '121'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 25 Sep 2024 15:00:34 GMT
+      Etag:
+      - W/"79-wHfy+EEP9D6OKdGP7kIPKAPAcso"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

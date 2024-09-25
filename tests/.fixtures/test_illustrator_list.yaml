@@ -1,0 +1,96 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.10.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/illustrators
+  response:
+    body:
+      string: "[\"\\\"Big Mama\\\" Tagawa\",\"5ban Graphics\",\"0313\",\"2017 Pikachu
+        Project\",\"AKIRA EGAWA\",\"AYUMI ODASHIMA\",\"Aimi Tomita\",\"Akira Komayama\",\"Anesaki
+        Dynamic\",\"Asako Ito\",\"Asuka Iwashita\",\"Atsuko Nishida\",\"Atsuko Ujiie\",\"Atsushi
+        Furusawa\",\"Avec Yoko\",\"Aya Kusube\",\"Ayaka Yoshida\",\"BERUBURI\",\"Benimaru
+        Itoh\",\"Big Mama\\\" Tagawa\\\"\",\"CR CG gangs\",\"Christopher Rush\",\"ConceptLab\",\"Craig
+        Turvey\",\"D.A.G Inc.\",\"Daisuke Ito\",\"Daisuke Iwamoto\",\"DemizuPosuka\",\"Dr.Ooyama\",\"Emi
+        Ando\",\"Emi Miwa\",\"Emi Yoshida\",\"En Morikura\",\"Eri Yamaki\",\"Eske
+        Yoshinob\",\"Etsuya Hattori\",\"Framestore\",\"Fumie Kittaka\",\"GAME FREAK
+        inc.\",\"GOSSAN\",\"Gakuji Nomoto\",\"HYOGONOSUKE\",\"Hajime Kusajima\",\"Haru
+        Akasaka\",\"Hasegawa Saki\",\"Hasuno\",\"HiRON\",\"Hideaki Hakozaki\",\"Hideki
+        Ishikawa\",\"Hideki Kazama\",\"Hideyuki Nakajima\",\"Hikaru Koike\",\"Hiroaki
+        Ito\",\"Hiroki Asanuma\",\"Hiroki Fuchino\",\"Hiromichi Sugiyama\",\"Hironobu
+        Yoshida\",\"Hiroyuki Yamamoto\",\"Hisao Nakamura\",\"Hitoshi Ariga\",\"Hizuki
+        Misono\",\"Huang Tzu En\",\"Illus. & Direc. The Pok\xE9mon Company Art Team\",\"Illus.\uFF06Direc.The
+        Pok\xE9mon Company Art Team\",\"Imakuni?\",\"James Turner\",\"Jerky\",\"Jumpei
+        Akasaka\",\"Jungo Suzuki\",\"Junsei Kuninobu\",\"K Hoshiba\",\"K.  Hoshiba\",\"K.
+        Hoshiba\",\"K. Utsunomiya\",\"KEIICHIRO ITO\",\"KIYOTAKA OSHIYAMA\",\"Kagemaru
+        Himeno\",\"Kai Ishikawa\",\"Kanako Eo\",\"Katie Gross\",\"Katsura Tabata\",\"Kazuaki
+        Aihara\",\"Kazuma Koda\",\"Kazuo Yazawa\",\"Kazuyuki Kano\",\"Keiji Kinebuchi\",\"Keiko
+        Fukuyama\",\"Keiko Moritsugu\",\"Ken Ikugi\",\"Ken Ikuji\",\"Ken Sugimori\",\"Ken
+        Sugimori Yusuke Ohmura\",\"Kenkichi Toyama\",\"Kent Kanetsuna\",\"Kent Kanetsuna/Direc.
+        Shinji Higuchi\",\"Kimiya Masago\",\"Kinu Nishimura\",\"Kouji Tajima\",\"Kouki
+        Saitou\",\"Kunihiko Yuyama\",\"Kyoko Koizumi\",\"Kyoko Umemoto\",\"Lee HyunJung\",\"M.
+        Akiyama\",\"MAHOU\",\"MPC Film\",\"MUGENUP\",\"Maiko Fujiwara\",\"Makoto Imai\",\"Mana
+        Ibe\",\"Mark Kraus\",\"Masahiko Ishii\",\"Masakazu Fukuda\",\"Masako Yamashita\",\"May
+        Do\",\"Megumi Higuchi\",\"Megumi Mizutani\",\"Midori Harada\",\"Midroi Harada\",\"Mika
+        Pikazo\",\"Miki Tanaka\",\"MikiTanaka\",\"Mikiko Takeda\",\"Mikio Menjo\",\"Milky
+        Isobe\",\"Mina Nakai\",\"Misa Tsutsui\",\"Misaki Hashimoto\",\"Mitsuhiro Arita\",\"Mizue\",\"Motofumi
+        Fujiwara\",\"Mt. TBT\",\"NC Empire\",\"Nabana Kensaku\",\"Nagimiso\",\"Nagomi
+        Nijo\",\"Nakaoka\",\"Naoki Saito\",\"Naoyo Kimura\",\"Narumi Sato\",\"Nisota
+        Niso\",\"Nobuyuki Fujimoto\",\"Noriko Hotta\",\"Noriko Uono\",\"Nurikabe\",\"OKACHEKE\",\"OOYAMA\",\"Oswaldo
+        KATO\",\"PLANETA\",\"PLANETA Igarashi\",\"PLANETA Mochizuki\",\"PLANETA Otani\",\"PLANETA
+        Tsuji\",\"PLANETA Yamashita\",\"Pani Kobayashi\",\"Reiko Tanoue\",\"Rowan
+        Laidlaw\",\"Ryo Ueda\",\"Ryota Murayama\",\"Ryota Saito\",\"Ryuta Fuse\",\"SATOSHI
+        NAKAI\",\"Sachi Matoba\",\"Sachiko Adachi\",\"Saki Hayashiro\",\"Sakiko Maeda\",\"Sanosuke
+        Sakuma\",\"Satoshi Ohta\",\"Satoshi Shirai\",\"Saya Tsuruta\",\"Saya\u3000Tsuruta\",\"Sekio\",\"Shiburingaru\",\"Shibuzoh.\",\"Shigenori
+        Negishi\",\"Shin Nagasawa\",\"Shin-ichi Yoshida\",\"Shin-ichi Yoshikawa\",\"Shinji
+        Higuchi\",\"Shinji Higuchi + Noriko Takaya\",\"Shinji Higuchi + Noriko Takaya/\u6A0B\u53E3\u771F\u55E3+\u9AD8\u5C4B\u6CD5\u5B50\",\"Shinji
+        Higuchi + Sachiko Eba\",\"Shinji Higuchi + Sachiko Eba \u6A0B\u53E3 \u771F\u55E3
+        + \u6C5F\u5834 \u5DE6\u77E5\u5B50\",\"Shinji Higuchi + Sachiko Eba/\u6A0B\u53E3\u771F\u55E3
+        + \u6C5F\u5834\u5DE6\u77E5\u5B50\",\"Shinji Higuchi + Sachiko Eba/\u6A0B\u53E3\u771F\u55E3+\u6C5F\u5834\u5DE6\u77E5\u5B50\",\"Shizurow\",\"Souichirou
+        Gunjima\",\"Studio Bora Inc.\",\"Sumiyoshi Kizuki\",\"Suwama Chiaki\",\"Sylvia
+        Forrest\",\"T. Honda\",\"TOKIYA\",\"Taira Akitsu\",\"Takabon\",\"Takao Unno\",\"Takashi
+        Yamaguchi\",\"Takumi Akabane\",\"Teeziro\",\"The Pok\xE9mon Company Art Team\",\"Tika
+        Matsuno\",\"Tokumi Akabane\",\"Tomoaki Imakuni\",\"Tomohiro Kitakaze\",\"Tomokazu\",\"Tomokazu
+        Komiya\",\"Tomoko Wakai\",\"Tomomi Kaneko\",\"Toshinao Aoki\",\"Toyste Beach\",\"Uta\",\"Wataru
+        Kawahara\",\"Wataru Kawahara/Direc. Shinji Higuchi\",\"Yasuki Watanabe\",\"Yoshinobu
+        Saito\",\"Yosuke Da Silva\",\"You Iribi\",\"Yuichi Sawayama\",\"Yuka Morii\",\"Yukiko
+        Baba\",\"Yumi\",\"Yuri Umemura\",\"Yusuke Ishikawa\",\"Yusuke Kozaki\",\"Yusuke
+        Ohmura\",\"Yusuke Shimada\",\"Yuu Nishida\",\"Yuya Oka\",\"Zu-Ka\",\"aky CG
+        Works\",\"chibi\",\"hatachu\",\"inose yukie\",\"kanahei\",\"kantaro\",\"kawayoo\",\"kirisAki\",\"kodama\",\"match\",\"miki
+        kudo\",\"nagimiso\",\"otumami\",\"ryoma uratsuka\",\"sadaji\",\"so-taro\",\"sowsow\",\"sui\",\"take\",\"takuyoa\",\"tetsuya
+        koizumi\",\"yuu\"]"
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '4055'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 25 Sep 2024 15:00:35 GMT
+      Etag:
+      - W/"fd7-X0YApcKK5YBcLHfh/0/RO2JKAXc"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,73 +1,64 @@
-[tool.poetry]
+
+[project]
 name = "tcgdex-sdk"
-version = "0.1.0"
+version = "0.10.0"
 description = ""
-authors = [
-	"Avior <git@avior.me>",
-	"HellLord77"
-]
-maintainers = ["Avior <git@avior.me>"]
-classifiers = [
-	# How mature is this project? Common values are
-	#   3 - Alpha
-	#   4 - Beta
-	#   5 - Production/Stable
-	"Development Status :: 3 - Alpha",
-
-	# Indicate who your project is intended for
-	"Intended Audience :: Developers",
-	"Operating System :: OS Independent",
-
-	# Pick your license as you wish
-	"License :: OSI Approved :: MIT License",
-
-	# Specify the Python versions you support here. In particular, ensure
-	# that you indicate you support Python 3. These classifiers are *not*
-	# checked by "pip install". See instead "requires-python" key in this file.
-	"Programming Language :: Python :: 3",
-	"Programming Language :: Python :: 3.8",
-	"Programming Language :: Python :: 3.9",
-	"Programming Language :: Python :: 3.10",
-	"Programming Language :: Python :: 3.11",
-	"Programming Language :: Python :: 3.12",
-	"Programming Language :: Python :: 3 :: Only",
-]
-# https://packaging.python.org/en/latest/guides/making-a-pypi-friendly-readme/
+authors = [{ name = "Avior", email = "git@avior.me" }, { name = "HellLord77" }]
+dependencies = ["dacite>=1.8.1"]
+requires-python = ">=3.8"
 readme = "README.md"
-packages = [{include = "tcgdexsdk", from = "src"}]
-license = "MIT"
+license = { text = "MIT" }
+maintainers = [{ name = "Avior", email = "git@avior.me" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+]
 
+[project.urls]
+"Bug Tracker" = "https://github.com/tcgdex/python-sdk/issues"
+"Sponsor Us !" = "https://github.com/sponsors/tcgdex"
 homepage = "https://tcgdex.dev"
-documentation = "https://tcgdex.dev"
 repository = "https://github.com/tcgdex/python-sdk"
-
-
-[tool.poetry.dependencies]
-python = ">=3.8"
-dacite = "^1.8.1"
-
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
-"Sponsor Us !" = ""
-
-[tool.poetry.group.test]
-optional = true
-
-[tool.poetry.group.test.dependencies]
-vcrpy = "^6.0.1"
-
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.6.2"
+documentation = "https://tcgdex.dev"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
-# pyproject.toml
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = ["ruff>=0.6.7", "vcrpy<7.0.0,>=6.0.1", "toml>=0.10.2"]
+
+[tool.pdm.scripts]
+pre_build = "python scripts/load_version.py"
+check = "ruff check"
+test = "python -m unittest discover -s tests"
+
+[tool.pdm.build]
+includes = ["src/tcgdexsdk"]
+
 [tool.ruff]
 line-length = 120
-# exclude = ["build/", "docs/"] 
+# exclude = ["build/", "docs/"]
 
 [tool.ruff.lint]
 select = ["E", "F", "UP", "B", "SIM", "I"]
+
+[tool.pyright]
+exclude = [".venv"]
+venvPath = "."
+venv = ".venv"
+reportTypeshedErrors = false
+reportMissingImports = true
+reportMissingTypeStubs = false

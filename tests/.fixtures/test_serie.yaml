@@ -1,0 +1,63 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.10.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/series/swsh
+  response:
+    body:
+      string: "{\"id\":\"swsh\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swshp/logo\",\"name\":\"Sword
+        & Shield\",\"sets\":[{\"cardCount\":{\"official\":107,\"total\":166},\"id\":\"swshp\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swshp/logo\",\"name\":\"SWSH
+        Black Star Promos\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swshp/symbol\"},{\"cardCount\":{\"official\":202,\"total\":216},\"id\":\"swsh1\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh1/logo\",\"name\":\"Sword
+        & Shield\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh1/symbol\"},{\"cardCount\":{\"official\":192,\"total\":209},\"id\":\"swsh2\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh2/logo\",\"name\":\"Rebel
+        Clash\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh2/symbol\"},{\"cardCount\":{\"official\":189,\"total\":201},\"id\":\"swsh3\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh3/logo\",\"name\":\"Darkness
+        Ablaze\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh3/symbol\"},{\"cardCount\":{\"official\":5,\"total\":5},\"id\":\"fut2020\",\"logo\":\"https://assets.tcgdex.net/en/swsh/fut2020/logo\",\"name\":\"Pok\xE9mon
+        Futsal 2020\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/fut2020/symbol\"},{\"cardCount\":{\"official\":70,\"total\":80},\"id\":\"swsh3.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh3.5/logo\",\"name\":\"Champion's
+        Path\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh3.5/symbol\"},{\"cardCount\":{\"official\":185,\"total\":203},\"id\":\"swsh4\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh4/logo\",\"name\":\"Vivid
+        Voltage\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh4/symbol\"},{\"cardCount\":{\"official\":72,\"total\":195},\"id\":\"swsh4.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh4.5/logo\",\"name\":\"Shining
+        Fates\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh4.5/symbol\"},{\"cardCount\":{\"official\":163,\"total\":183},\"id\":\"swsh5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh5/logo\",\"name\":\"Battle
+        Styles\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh5/symbol\"},{\"cardCount\":{\"official\":198,\"total\":233},\"id\":\"swsh6\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh6/logo\",\"name\":\"Chilling
+        Reign\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh6/symbol\"},{\"cardCount\":{\"official\":203,\"total\":237},\"id\":\"swsh7\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh7/logo\",\"name\":\"Evolving
+        Skies\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh7/symbol\"},{\"cardCount\":{\"official\":25,\"total\":51},\"id\":\"cel25\",\"logo\":\"https://assets.tcgdex.net/en/swsh/cel25/logo\",\"name\":\"Celebrations\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/cel25/symbol\"},{\"cardCount\":{\"official\":264,\"total\":284},\"id\":\"swsh8\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh8/logo\",\"name\":\"Fusion
+        Strike\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh8/symbol\"},{\"cardCount\":{\"official\":172,\"total\":216},\"id\":\"swsh9\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh9/logo\",\"name\":\"Brilliant
+        Stars\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh9/symbol\"},{\"cardCount\":{\"official\":189,\"total\":246},\"id\":\"swsh10\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh10/logo\",\"name\":\"Astral
+        Radiance\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh10/symbol\"},{\"cardCount\":{\"official\":78,\"total\":88},\"id\":\"swsh10.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh10.5/logo\",\"name\":\"Pok\xE9mon
+        GO\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh10.5/symbol\"},{\"cardCount\":{\"official\":196,\"total\":247},\"id\":\"swsh11\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh11/logo\",\"name\":\"Lost
+        Origin\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh11/symbol\"},{\"cardCount\":{\"official\":195,\"total\":245},\"id\":\"swsh12\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh12/logo\",\"name\":\"Silver
+        Tempest\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh12/symbol\"},{\"cardCount\":{\"official\":159,\"total\":230},\"id\":\"swsh12.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh12.5/logo\",\"name\":\"Crown
+        Zenith\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol\"}]}"
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '3821'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 25 Sep 2024 15:00:39 GMT
+      Etag:
+      - W/"eed-NQdypzKPHFMtRQvfcaWeUrxG4Qg"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

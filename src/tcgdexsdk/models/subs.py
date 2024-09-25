@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+from typing import List, Optional, Union
 
 
 @dataclass
@@ -20,11 +20,11 @@ class CardAttack:
 
     name: Optional[str]
     """Name of the attack"""
-    cost: Optional[list[str]]
+    cost: Optional[List[str]]
     """Cost of the attack in the same order as listed on the card"""
     effect: Optional[str]
     """Effect/Description of the attack, may be null for attacks without text"""
-    damage: Optional[int | str]
+    damage: Optional[Union[int, str]]
     """Damage the attack deals. May just be a number like '30', but can also be a multiplier like 'x20'"""
 
 

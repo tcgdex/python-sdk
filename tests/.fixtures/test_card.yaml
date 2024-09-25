@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.10.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/cards/swsh1-136
+  response:
+    body:
+      string: "{\"category\":\"Pokemon\",\"id\":\"swsh1-136\",\"illustrator\":\"kirisAki\",\"image\":\"https://assets.tcgdex.net/en/swsh/swsh1/136\",\"localId\":\"136\",\"name\":\"Cufant\",\"rarity\":\"Common\",\"set\":{\"cardCount\":{\"official\":202,\"total\":216},\"id\":\"swsh1\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh1/logo\",\"name\":\"Sword
+        & Shield\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh1/symbol\"},\"variants\":{\"firstEdition\":false,\"holo\":false,\"normal\":true,\"reverse\":true,\"wPromo\":false},\"dexId\":[878],\"hp\":100,\"types\":[\"Metal\"],\"description\":\"If
+        a job requires serious strength, this Pok\xE9mon will excel at it. Its copper
+        body tarnishes in the rain, turning a vibrant green color.\",\"stage\":\"Basic\",\"attacks\":[{\"cost\":[\"Metal\",\"Metal\"],\"name\":\"Stomp\",\"effect\":\"Flip
+        a coin. If heads, this attack does 20 more damage.\",\"damage\":\"20+\"}],\"weaknesses\":[{\"type\":\"Fire\",\"value\":\"\xD72\"}],\"resistances\":[{\"type\":\"Grass\",\"value\":\"-30\"}],\"retreat\":3,\"regulationMark\":\"D\",\"legal\":{\"standard\":false,\"expanded\":true},\"updated\":\"2021-10-26T10:40:03+02:00\"}"
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '1012'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 25 Sep 2024 15:00:30 GMT
+      Etag:
+      - W/"3f4-IqG3FBScvWLRDF4P05TkWIAoFd4"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

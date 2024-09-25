@@ -1,101 +1,186 @@
-import unittest
-from typing import Callable
+from unittest import IsolatedAsyncioTestCase
+from typing import Callable, List
 
 import vcr
 
-from tcgdexsdk import Language, TCGdex
-
+from tcgdexsdk import TCGdex, Language
+from tcgdexsdk.models.Card import Card
+from tcgdexsdk.models.CardResume import CardResume
+from tcgdexsdk.models.Serie import Serie
+from tcgdexsdk.models.SerieResume import SerieResume
+from tcgdexsdk.models.Set import Set
+from tcgdexsdk.models.SetResume import SetResume
+from tcgdexsdk.models.StringEndpoint import StringEndpoint
 
 def _use_cassette(test: Callable) -> Callable:
-    return vcr.use_cassette(f"fixtures/{test.__name__.removeprefix('test_')}.yaml")(
+    return vcr.use_cassette(f"tests/.fixtures/{test.__name__}.yaml")(
         test
     )
 
-
-class APITest(unittest.TestCase):
+class APITest(IsolatedAsyncioTestCase):
     def setUp(self):
         self.api = TCGdex(Language.EN)
 
     @_use_cassette
-    def test_card(self):
-        self.assertIsNotNone(self.api.fetch_cards())
-        self.assertIsNotNone(self.api.fetch_card("swsh3-136"))
-        self.assertIsNotNone(self.api.fetch_card("swsh3", "136"))
+    async def test_card_resume(self):
+        res = await self.api.card.list()
+        self.assertIsInstance(res[0], CardResume)
 
     @_use_cassette
-    def test_set(self):
-        self.assertIsNotNone(self.api.fetch_set("swsh3"))
-        self.assertIsNotNone(self.api.fetch_sets())
+    async def test_card(self):
+        res = await self.api.card.get("swsh1-136")
+        self.assertIsInstance(res, Card)
 
     @_use_cassette
-    def test_serie(self):
-        self.assertIsNotNone(self.api.fetch_serie("swsh"))
-        self.assertIsNotNone(self.api.fetch_series())
+    async def test_set_resume(self):
+        res = await self.api.set.list()
+        self.assertIsInstance(res[0], SetResume)
 
     @_use_cassette
-    def test_type(self):
-        self.assertIsNotNone(self.api.fetch_types())
-        self.assertIsNotNone(self.api.fetch_type("Colorless"))
+    async def test_set(self):
+        res = await self.api.set.get("swsh1")
+        self.assertIsInstance(res, Set)
 
     @_use_cassette
-    def test_retreat(self):
-        self.assertIsNotNone(self.api.fetch_retreats())
-        self.assertIsNotNone(self.api.fetch_retreat("1"))
+    async def test_serie_resume(self):
+        res = await self.api.serie.list()
+        self.assertIsInstance(res[0], SerieResume)
 
     @_use_cassette
-    def test_rarity(self):
-        self.assertIsNotNone(self.api.fetch_rarities())
-        self.assertIsNotNone(self.api.fetch_rarity("Uncommon"))
+    async def test_serie(self):
+        res = await self.api.serie.get("swsh")
+        self.assertIsInstance(res, Serie)
 
     @_use_cassette
-    def test_illustrator(self):
-        self.assertIsNotNone(self.api.fetch_illustrators())
-        self.assertIsNotNone(self.api.fetch_illustrator("tetsuya koizumi"))
+    async def test_variant_list(self):
+        res = await self.api.variant.list()
+        self.assertIsInstance(res[0], str)
 
     @_use_cassette
-    def test_hp(self):
-        self.assertIsNotNone(self.api.fetch_hps())
-        self.assertIsNotNone(self.api.fetch_hp("110"))
+    async def test_variant_item(self):
+        res = await self.api.variant.get('reverse')
+        self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
-    def test_category(self):
-        self.assertIsNotNone(self.api.fetch_categories())
-        self.assertIsNotNone(self.api.fetch_category("Pokemon"))
+    async def test_trainerType_list(self):
+        res = await self.api.trainerType.list()
+        self.assertIsInstance(res[0], str)
 
     @_use_cassette
-    def test_dex_id(self):
-        self.assertIsNotNone(self.api.fetch_dex_ids())
-        self.assertIsNotNone(self.api.fetch_dex_id("162"))
+    async def test_trainerType_item(self):
+        res = await self.api.trainerType.get('trainer')
+        self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
-    def test_energy_type(self):
-        self.assertIsNotNone(self.api.fetch_energy_types())
-        self.assertIsNotNone(self.api.fetch_energy_type("Special"))
+    async def test_suffix_list(self):
+        res = await self.api.suffix.list()
+        self.assertIsInstance(res[0], str)
 
     @_use_cassette
-    def test_regulation_mark(self):
-        self.assertIsNotNone(self.api.fetch_regulation_marks())
-        self.assertIsNotNone(self.api.fetch_regulation_mark("D"))
+    async def test_suffix_item(self):
+        res = await self.api.suffix.get('ex')
+        self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
-    def test_stage(self):
-        self.assertIsNotNone(self.api.fetch_stages())
-        self.assertIsNotNone(self.api.fetch_stage("Basic"))
+    async def test_stage_list(self):
+        res = await self.api.stage.list()
+        self.assertIsInstance(res[0], str)
 
     @_use_cassette
-    def test_suffix(self):
-        self.assertIsNotNone(self.api.fetch_suffixes())
-        self.assertIsNotNone(self.api.fetch_suffix("EX"))
+    async def test_stage_item(self):
+        res = await self.api.stage.get('stage1')
+        self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
-    def test_trainer_type(self):
-        self.assertIsNotNone(self.api.fetch_trainer_types())
-        self.assertIsNotNone(self.api.fetch_trainer_type("Tool"))
+    async def test_regulationMark_list(self):
+        res = await self.api.regulationMark.list()
+        self.assertIsInstance(res[0], str)
 
     @_use_cassette
-    def test_variant(self):
-        self.assertIsNotNone(self.api.fetch_variants())
-        self.assertIsNotNone(self.api.fetch_variant("holo"))
+    async def test_regulationMark_item(self):
+        res = await self.api.regulationMark.get('D')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_energyType_list(self):
+        res = await self.api.energyType.list()
+        self.assertIsInstance(res[0], str)
+
+    @_use_cassette
+    async def test_energyType_item(self):
+        res = await self.api.energyType.get('normal')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_dexId_list(self):
+        res = await self.api.dexId.list()
+        self.assertIsInstance(res[0], int)
+
+    @_use_cassette
+    async def test_dexId_item(self):
+        res = await self.api.dexId.get('1')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_type_list(self):
+        res = await self.api.type.list()
+        self.assertIsInstance(res[0], str)
+
+    @_use_cassette
+    async def test_type_item(self):
+        res = await self.api.type.get('grass')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_retreat_list(self):
+        res = await self.api.retreat.list()
+        self.assertIsInstance(res[0], int)
+
+    @_use_cassette
+    async def test_retreat_item(self):
+        res = await self.api.retreat.get('1')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_rarity_list(self):
+        res = await self.api.rarity.list()
+        self.assertIsInstance(res[0], str)
+
+    @_use_cassette
+    async def test_rarity_item(self):
+        res = await self.api.rarity.get('common')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_illustrator_list(self):
+        res = await self.api.illustrator.list()
+        self.assertIsInstance(res[0], str)
+
+    @_use_cassette
+    async def test_illustrator_item(self):
+        res = await self.api.illustrator.get('0313')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_hp_list(self):
+        res = await self.api.hp.list()
+        self.assertIsInstance(res[0], int)
+
+    @_use_cassette
+    async def test_hp_item(self):
+        res = await self.api.hp.get('10')
+        self.assertIsInstance(res, StringEndpoint)
+
+    @_use_cassette
+    async def test_category_list(self):
+        res = await self.api.category.list()
+        self.assertIsInstance(res[0], str)
+
+    @_use_cassette
+    async def test_category_item(self):
+        res = await self.api.category.get('pokemon')
+        self.assertIsInstance(res, StringEndpoint)
+
 
 
 def main():
