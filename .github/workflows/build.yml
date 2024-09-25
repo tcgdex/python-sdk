@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: matrix
-        uses: JLLeitschuh/endoflife-matrix-action@v1
+        uses: JLLeitschuh/endoflife-matrix-action@main
         with:
           product: python
     outputs:
