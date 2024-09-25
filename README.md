@@ -4,19 +4,16 @@
 	</a>
 </p>
 <p align="center">
-	<a href="http://npmjs.com/@tcgdex/sdk">
-		<img src="https://img.shields.io/npm/v/@tcgdex/sdk?style=flat-square" alt="NOM Version">
+	<a href="http://pypi.org/project/tcgdex-sdk">
+		<img src="https://img.shields.io/pypi/v/tcgdex-sdk?style=flat-square" alt="Pypi Version">
 	</a>
 	<a href="http://npmjs.com/@tcgdex/sdk">
-		<img src="https://img.shields.io/npm/dm/@tcgdex/sdk?style=flat-square" alt="NPM Downloads">
+		<img src="https://img.shields.io/pypi/dm/tcgdex-sdk?style=flat-square" alt="Pypi Downloads">
 	</a>
-	<a href="https://app.codecov.io/gh/tcgdex/javascript-sdk/">
-		<img src="https://img.shields.io/codecov/c/github/tcgdex/javascript-sdk?style=flat-square&token=FR4BI94N4Q" alt="npm version">
+		<a href="https://github.com/tcgdex/python-sdk/stargazers">
+		<img src="https://img.shields.io/github/stars/tcgdex/python-sdk?style=flat-square" alt="Github stars">
 	</a>
-		<a href="https://github.com/tcgdex/javascript-sdk/stargazers">
-		<img src="https://img.shields.io/github/stars/tcgdex/javascript-sdk?style=flat-square" alt="Github stars">
-	</a>
-	<a href="https://github.com/tcgdex/javascript-sdk/actions/workflows/build.yml">
+	<a href="https://github.com/tcgdex/python-sdk/actions/workflows/build.yml">
 		<img src="https://img.shields.io/github/workflow/status/tcgdex/javascript-sdk/Build%20&%20Test?style=flat-square" alt="the TCGdex JAvascript SDK is released under the MIT license." />
 	</a>
 	<a href="https://discord.gg/NehYTAhsZE">

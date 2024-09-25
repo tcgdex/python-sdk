@@ -25,7 +25,7 @@ if version.startswith("v"):
 
 # find version from pdm if not found on git
 if version == "":
-    version = pyproject["project"]["version"]
+    version = "0.0.0"
 
 
 # replace in file
