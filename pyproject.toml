@@ -3,15 +3,15 @@
 name = "tcgdex-sdk"
 # version = "0.0.0"
 dynamic = ["version"]
-description = ""
-authors = [{ name = "Avior", email = "git@avior.me" }, { name = "HellLord77" }]
-dependencies = ["dacite>=1.8.1"]
+description = "The TCGdex Python SDK provides a convenient access to the Open Source TCGdex API."
+authors = [{ name = "HellLord77" }, { name = "Avior", email = "git@avior.me" }]
+dependencies = ["dacite<2.0.0,>=1.8.1"]
 requires-python = ">=3.8"
 readme = "README.md"
 license = { text = "MIT" }
 maintainers = [{ name = "Avior", email = "git@avior.me" }]
 classifiers = [
-	"Development Status :: 3 - Alpha",
+	"Development Status :: 5 - Production/Stable",
 	"Intended Audience :: Developers",
 	"Operating System :: OS Independent",
 	"License :: OSI Approved :: MIT License",
@@ -22,14 +22,15 @@ classifiers = [
 	"Programming Language :: Python :: 3.11",
 	"Programming Language :: Python :: 3.12",
 	"Programming Language :: Python :: 3 :: Only",
+	"Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 [project.urls]
-"Bug Tracker" = "https://github.com/tcgdex/python-sdk/issues"
-"Sponsor Us !" = "https://github.com/sponsors/tcgdex"
-homepage = "https://tcgdex.dev"
 repository = "https://github.com/tcgdex/python-sdk"
-documentation = "https://tcgdex.dev"
+"Bug Tracker" = "https://github.com/tcgdex/python-sdk/issues"
+homepage = "https://tcgdex.dev"
+documentation = "https://tcgdex.dev/sdks/python"
+"Sponsor Us !" = "https://github.com/sponsors/tcgdex"
 
 [build-system]
 requires = ["pdm-backend"]
