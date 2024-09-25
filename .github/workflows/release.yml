@@ -26,5 +26,8 @@ jobs:
       - name: Install PDM
         uses: pdm-project/setup-pdm@v4
 
+      - name: Install the project dependencies
+        run: pdm install -d
+
       - name: Build & Publish package to PyPI
         run: pdm publish
