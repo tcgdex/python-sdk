@@ -1,9 +1,9 @@
-from unittest import IsolatedAsyncioTestCase
-from typing import Callable, List
+import unittest
+from typing import Callable
 
 import vcr
 
-from tcgdexsdk import TCGdex, Language
+from tcgdexsdk import Language, TCGdex
 from tcgdexsdk.models.Card import Card
 from tcgdexsdk.models.CardResume import CardResume
 from tcgdexsdk.models.Serie import Serie
@@ -12,12 +12,12 @@ from tcgdexsdk.models.Set import Set
 from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.StringEndpoint import StringEndpoint
 
-def _use_cassette(test: Callable) -> Callable:
-    return vcr.use_cassette(f"tests/.fixtures/{test.__name__}.yaml")(
-        test
-    )
 
-class APITest(IsolatedAsyncioTestCase):
+def _use_cassette(test: Callable) -> Callable:
+    return vcr.use_cassette(f"tests/.fixtures/{test.__name__}.yaml")(test)
+
+
+class APITest(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
         self.api = TCGdex(Language.EN)
 
@@ -58,7 +58,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_variant_item(self):
-        res = await self.api.variant.get('reverse')
+        res = await self.api.variant.get("reverse")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -68,7 +68,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_trainerType_item(self):
-        res = await self.api.trainerType.get('trainer')
+        res = await self.api.trainerType.get("trainer")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -78,7 +78,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_suffix_item(self):
-        res = await self.api.suffix.get('ex')
+        res = await self.api.suffix.get("ex")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -88,7 +88,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_stage_item(self):
-        res = await self.api.stage.get('stage1')
+        res = await self.api.stage.get("stage1")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -98,7 +98,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_regulationMark_item(self):
-        res = await self.api.regulationMark.get('D')
+        res = await self.api.regulationMark.get("D")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -108,7 +108,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_energyType_item(self):
-        res = await self.api.energyType.get('normal')
+        res = await self.api.energyType.get("normal")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -118,7 +118,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_dexId_item(self):
-        res = await self.api.dexId.get('1')
+        res = await self.api.dexId.get("1")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -128,7 +128,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_type_item(self):
-        res = await self.api.type.get('grass')
+        res = await self.api.type.get("grass")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -138,7 +138,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_retreat_item(self):
-        res = await self.api.retreat.get('1')
+        res = await self.api.retreat.get("1")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -148,7 +148,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_rarity_item(self):
-        res = await self.api.rarity.get('common')
+        res = await self.api.rarity.get("common")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -158,7 +158,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_illustrator_item(self):
-        res = await self.api.illustrator.get('0313')
+        res = await self.api.illustrator.get("0313")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -168,7 +168,7 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_hp_item(self):
-        res = await self.api.hp.get('10')
+        res = await self.api.hp.get("10")
         self.assertIsInstance(res, StringEndpoint)
 
     @_use_cassette
@@ -178,9 +178,8 @@ class APITest(IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_category_item(self):
-        res = await self.api.category.get('pokemon')
+        res = await self.api.category.get("pokemon")
         self.assertIsInstance(res, StringEndpoint)
-
 
 
 def main():

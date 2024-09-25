@@ -3,9 +3,10 @@ from http.client import HTTPResponse
 from typing import List, Optional, Union
 
 from tcgdexsdk import utils
-from tcgdexsdk.enums import Extension, Quality
+from tcgdexsdk.enums import Extension
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.models.SetResume import SetResume
+
 
 @dataclass
 class Serie(Model):

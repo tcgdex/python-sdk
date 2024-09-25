@@ -3,6 +3,7 @@ from enum import Enum
 # Todo when min is 3.11
 # Move to StringEnum and auto
 
+
 class Language(Enum):
     EN = "en"
     """English"""

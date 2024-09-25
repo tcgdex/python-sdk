@@ -6,6 +6,7 @@ from tcgdexsdk import utils
 from tcgdexsdk.enums import Extension, Quality
 from tcgdexsdk.models.Model import Model
 
+
 @dataclass
 class CardResume(Model):
     """Card Resume class, contains basic information about a specific card

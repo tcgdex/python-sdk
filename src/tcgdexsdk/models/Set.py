@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from http.client import HTTPResponse
-from typing import List, Optional
-from typing_extensions import Union
+from typing import List, Optional, Union
 
 from tcgdexsdk import utils
-from tcgdexsdk.enums import Extension, Quality
+from tcgdexsdk.enums import Extension
 from tcgdexsdk.models.CardResume import CardResume
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.models.SerieResume import SerieResume
 from tcgdexsdk.models.subs import Legal, SetCardCountResume
+
 
 @dataclass
 class Set(Model):
@@ -24,7 +24,6 @@ class Set(Model):
     """the Set Symbol incomplete URL (use get_symbol_url/get_symbol)"""
     cardCount: SetCardCountResume
     """the number of card in the set"""
-
 
     serie: SerieResume
     """the serie this set is a part of"""
@@ -64,7 +63,9 @@ class Set(Model):
         if self.symbol:
             return f"{self.symbol}.{extension}"
 
-    def get_symbol(self, format: Union[str, Extension]) -> Optional[HTTPResponse]:
+    def get_symbol(
+        self, format: Union[str, Extension]
+    ) -> Optional[HTTPResponse]:
         """
         Get the symbol buffer
         @param format: the image format
