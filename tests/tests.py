@@ -22,6 +22,16 @@ class APITest(unittest.IsolatedAsyncioTestCase):
         self.api = TCGdex(Language.EN)
 
     @_use_cassette
+    async def test_fr(self):
+        tcg = TCGdex(Language.FR)
+        res = await tcg.card.get('swsh3-136')
+        self.assertEqual(res.name, 'Fouinar')
+        tcg2 = TCGdex('fr')
+        res = await tcg2.card.get('swsh3-136')
+        self.assertEqual(res.name, 'Fouinar')
+
+
+    @_use_cassette
     async def test_card_resume(self):
         res = await self.api.card.list()
         self.assertIsInstance(res[0], CardResume)
