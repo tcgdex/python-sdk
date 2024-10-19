@@ -26,12 +26,8 @@ class Endpoint(Generic[Item, ListModel]):
         self.endpoint = endpoint
 
     async def get(self, id: str) -> Optional[Item]:
-        return fetch(self.tcgdex, f"https://api.tcgdex.net/v2/en/{self.endpoint}/{id}", self.item_model)
+        print(self.tcgdex.language)
+        return fetch(self.tcgdex, f"https://api.tcgdex.net/v2/{self.tcgdex.language}/{self.endpoint}/{id}", self.item_model)
 
     async def list(self, query: Optional[Query] = None) -> List[ListModel]:
-        return fetch_list(self.tcgdex, f"https://api.tcgdex.net/v2/en/{self.endpoint}", self.list_model)
-
-# Usage example (you'd replace with actual implementations):
-# endpoint = Endpoint(tcgdex_instance, ItemModel, ListModel, 'cards')
-# item = await endpoint.get('some_id')
-# items_list = await endpoint.list(some_query)
+        return fetch_list(self.tcgdex, f"https://api.tcgdex.net/v2/{self.tcgdex.language}/{self.endpoint}", self.list_model)
