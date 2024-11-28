@@ -1,0 +1,198 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.1.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/series/swsh
+  response:
+    body:
+      string: "{\"id\":\"swsh\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swshp/logo\",\"name\":\"Sword
+        & Shield\",\"sets\":[{\"cardCount\":{\"official\":107,\"total\":166},\"id\":\"swshp\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swshp/logo\",\"name\":\"SWSH
+        Black Star Promos\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swshp/symbol\"},{\"cardCount\":{\"official\":202,\"total\":216},\"id\":\"swsh1\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh1/logo\",\"name\":\"Sword
+        & Shield\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh1/symbol\"},{\"cardCount\":{\"official\":192,\"total\":209},\"id\":\"swsh2\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh2/logo\",\"name\":\"Rebel
+        Clash\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh2/symbol\"},{\"cardCount\":{\"official\":189,\"total\":201},\"id\":\"swsh3\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh3/logo\",\"name\":\"Darkness
+        Ablaze\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh3/symbol\"},{\"cardCount\":{\"official\":5,\"total\":5},\"id\":\"fut2020\",\"logo\":\"https://assets.tcgdex.net/en/swsh/fut2020/logo\",\"name\":\"Pok\xE9mon
+        Futsal 2020\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/fut2020/symbol\"},{\"cardCount\":{\"official\":70,\"total\":80},\"id\":\"swsh3.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh3.5/logo\",\"name\":\"Champion's
+        Path\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh3.5/symbol\"},{\"cardCount\":{\"official\":185,\"total\":203},\"id\":\"swsh4\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh4/logo\",\"name\":\"Vivid
+        Voltage\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh4/symbol\"},{\"cardCount\":{\"official\":72,\"total\":195},\"id\":\"swsh4.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh4.5/logo\",\"name\":\"Shining
+        Fates\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh4.5/symbol\"},{\"cardCount\":{\"official\":163,\"total\":183},\"id\":\"swsh5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh5/logo\",\"name\":\"Battle
+        Styles\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh5/symbol\"},{\"cardCount\":{\"official\":198,\"total\":233},\"id\":\"swsh6\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh6/logo\",\"name\":\"Chilling
+        Reign\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh6/symbol\"},{\"cardCount\":{\"official\":203,\"total\":237},\"id\":\"swsh7\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh7/logo\",\"name\":\"Evolving
+        Skies\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh7/symbol\"},{\"cardCount\":{\"official\":25,\"total\":51},\"id\":\"cel25\",\"logo\":\"https://assets.tcgdex.net/en/swsh/cel25/logo\",\"name\":\"Celebrations\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/cel25/symbol\"},{\"cardCount\":{\"official\":264,\"total\":284},\"id\":\"swsh8\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh8/logo\",\"name\":\"Fusion
+        Strike\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh8/symbol\"},{\"cardCount\":{\"official\":172,\"total\":216},\"id\":\"swsh9\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh9/logo\",\"name\":\"Brilliant
+        Stars\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh9/symbol\"},{\"cardCount\":{\"official\":189,\"total\":246},\"id\":\"swsh10\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh10/logo\",\"name\":\"Astral
+        Radiance\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh10/symbol\"},{\"cardCount\":{\"official\":78,\"total\":88},\"id\":\"swsh10.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh10.5/logo\",\"name\":\"Pok\xE9mon
+        GO\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh10.5/symbol\"},{\"cardCount\":{\"official\":196,\"total\":247},\"id\":\"swsh11\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh11/logo\",\"name\":\"Lost
+        Origin\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh11/symbol\"},{\"cardCount\":{\"official\":195,\"total\":245},\"id\":\"swsh12\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh12/logo\",\"name\":\"Silver
+        Tempest\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh12/symbol\"},{\"cardCount\":{\"official\":159,\"total\":230},\"id\":\"swsh12.5\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swsh12.5/logo\",\"name\":\"Crown
+        Zenith\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol\"}]}"
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '3821'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 28 Nov 2024 02:09:50 GMT
+      Etag:
+      - W/"eed-NQdypzKPHFMtRQvfcaWeUrxG4Qg"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.1.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/sets/swshp
+  response:
+    body:
+      string: '{"cardCount":{"firstEd":0,"holo":125,"normal":0,"official":107,"reverse":0,"total":166},"cards":[{"id":"swshp-SWSH001","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH001","localId":"SWSH001","name":"Grookey"},{"id":"swshp-SWSH002","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH002","localId":"SWSH002","name":"Scorbunny"},{"id":"swshp-SWSH003","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH003","localId":"SWSH003","name":"Sobble"},{"id":"swshp-SWSH004","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH004","localId":"SWSH004","name":"Meowth
+        V"},{"id":"swshp-SWSH005","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH005","localId":"SWSH005","name":"Meowth
+        VMAX"},{"id":"swshp-SWSH006","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH006","localId":"SWSH006","name":"Rillaboom"},{"id":"swshp-SWSH007","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH007","localId":"SWSH007","name":"Frosmoth"},{"id":"swshp-SWSH008","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH008","localId":"SWSH008","name":"Galarian
+        Perrserker"},{"id":"swshp-SWSH009","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH009","localId":"SWSH009","name":"Cinccino"},{"id":"swshp-SWSH010","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH010","localId":"SWSH010","name":"Gossifleur"},{"id":"swshp-SWSH011","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH011","localId":"SWSH011","name":"Wooloo"},{"id":"swshp-SWSH012","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH012","localId":"SWSH012","name":"Morpeko"},{"id":"swshp-SWSH013","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH013","localId":"SWSH013","name":"Galarian
+        Ponyta"},{"id":"swshp-SWSH014","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH014","localId":"SWSH014","name":"Rillaboom
+        V"},{"id":"swshp-SWSH015","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH015","localId":"SWSH015","name":"Cinderace
+        V"},{"id":"swshp-SWSH016","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH016","localId":"SWSH016","name":"Inteleon
+        V"},{"id":"swshp-SWSH017","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH017","localId":"SWSH017","name":"Toxtricity
+        V"},{"id":"swshp-SWSH018","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH018","localId":"SWSH018","name":"Zacian
+        V"},{"id":"swshp-SWSH019","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH019","localId":"SWSH019","name":"Zamazenta
+        V"},{"id":"swshp-SWSH020","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH020","localId":"SWSH020","name":"Pikachu"},{"id":"swshp-SWSH021","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH021","localId":"SWSH021","name":"Polteageist
+        V"},{"id":"swshp-SWSH022","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH022","localId":"SWSH022","name":"Flapple"},{"id":"swshp-SWSH023","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH023","localId":"SWSH023","name":"Luxray"},{"id":"swshp-SWSH024","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH024","localId":"SWSH024","name":"Coalossal"},{"id":"swshp-SWSH025","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH025","localId":"SWSH025","name":"Garbodor"},{"id":"swshp-SWSH026","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH026","localId":"SWSH026","name":"Mantine"},{"id":"swshp-SWSH027","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH027","localId":"SWSH027","name":"Noctowl"},{"id":"swshp-SWSH028","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH028","localId":"SWSH028","name":"Duraludon"},{"id":"swshp-SWSH029","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH029","localId":"SWSH029","name":"Rayquaza"},{"id":"swshp-SWSH030","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH030","localId":"SWSH030","name":"Copperajah
+        V"},{"id":"swshp-SWSH031","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH031","localId":"SWSH031","name":"Morpeko"},{"id":"swshp-SWSH032","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH032","localId":"SWSH032","name":"Snorlax"},{"id":"swshp-SWSH033","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH033","localId":"SWSH033","name":"Zacian"},{"id":"swshp-SWSH034","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH034","localId":"SWSH034","name":"Zamazenta"},{"id":"swshp-SWSH035","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH035","localId":"SWSH035","name":"Decidueye"},{"id":"swshp-SWSH036","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH036","localId":"SWSH036","name":"Arctozolt"},{"id":"swshp-SWSH037","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH037","localId":"SWSH037","name":"Hydreigon"},{"id":"swshp-SWSH038","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH038","localId":"SWSH038","name":"Kangaskhan"},{"id":"swshp-SWSH039","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH039","localId":"SWSH039","name":"Pikachu"},{"id":"swshp-SWSH040","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH040","localId":"SWSH040","name":"Hatenna"},{"id":"swshp-SWSH041","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH041","localId":"SWSH041","name":"Flareon"},{"id":"swshp-SWSH042","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH042","localId":"SWSH042","name":"Eevee"},{"id":"swshp-SWSH043","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH043","localId":"SWSH043","name":"Galarian
+        Sirfetch''d V"},{"id":"swshp-SWSH044","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH044","localId":"SWSH044","name":"Eternatus
+        V"},{"id":"swshp-SWSH045","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH045","localId":"SWSH045","name":"Eternatus
+        VMAX"},{"id":"swshp-SWSH046","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH046","localId":"SWSH046","name":"Eldegoss"},{"id":"swshp-SWSH047","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH047","localId":"SWSH047","name":"Drednaw"},{"id":"swshp-SWSH048","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH048","localId":"SWSH048","name":"Centiskorch"},{"id":"swshp-SWSH049","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH049","localId":"SWSH049","name":"Dubwool
+        V"},{"id":"swshp-SWSH050","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH050","localId":"SWSH050","name":"Charizard
+        V"},{"id":"swshp-SWSH051","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH051","localId":"SWSH051","name":"Lapras"},{"id":"swshp-SWSH052","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH052","localId":"SWSH052","name":"Gengar"},{"id":"swshp-SWSH053","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH053","localId":"SWSH053","name":"Machamp"},{"id":"swshp-SWSH054","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH054","localId":"SWSH054","name":"Coalossal"},{"id":"swshp-SWSH055","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH055","localId":"SWSH055","name":"Hatterene
+        V"},{"id":"swshp-SWSH056","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH056","localId":"SWSH056","name":"Morpeko
+        V"},{"id":"swshp-SWSH057","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH057","localId":"SWSH057","name":"Grimmsnarl
+        V"},{"id":"swshp-SWSH058","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH058","localId":"SWSH058","name":"Alcremie"},{"id":"swshp-SWSH059","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH059","localId":"SWSH059","name":"Galarian
+        Obstagoon"},{"id":"swshp-SWSH060","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH060","localId":"SWSH060","name":"Duraludon"},{"id":"swshp-SWSH061","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH061","localId":"SWSH061","name":"Pikachu
+        V"},{"id":"swshp-SWSH062","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH062","localId":"SWSH062","name":"Pikachu
+        VMAX"},{"id":"swshp-SWSH063","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH063","localId":"SWSH063","name":"Pikachu
+        V"},{"id":"swshp-SWSH064","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH064","localId":"SWSH064","name":"Eternatus
+        V"},{"id":"swshp-SWSH065","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH065","localId":"SWSH065","name":"Eevee
+        V"},{"id":"swshp-SWSH066","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH066","localId":"SWSH066","name":"Charizard"},{"id":"swshp-SWSH067","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH067","localId":"SWSH067","name":"Donphan"},{"id":"swshp-SWSH068","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH068","localId":"SWSH068","name":"Snorlax"},{"id":"swshp-SWSH069","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH069","localId":"SWSH069","name":"Lugia"},{"id":"swshp-SWSH070","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH070","localId":"SWSH070","name":"Grookey"},{"id":"swshp-SWSH071","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH071","localId":"SWSH071","name":"Scorbunny"},{"id":"swshp-SWSH072","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH072","localId":"SWSH072","name":"Vaporeon"},{"id":"swshp-SWSH073","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH073","localId":"SWSH073","name":"Sobble"},{"id":"swshp-SWSH074","localId":"SWSH074","name":"Special
+        Delivery Pikachu"},{"id":"swshp-SWSH076","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH076","localId":"SWSH076","name":"Zacian
+        V"},{"id":"swshp-SWSH077","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH077","localId":"SWSH077","name":"Zamazenta
+        V"},{"id":"swshp-SWSH078","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH078","localId":"SWSH078","name":"Orbeetle
+        V"},{"id":"swshp-SWSH079","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH079","localId":"SWSH079","name":"Galarian
+        Mr. Rime"},{"id":"swshp-SWSH080","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH080","localId":"SWSH080","name":"Dedenne"},{"id":"swshp-SWSH081","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH081","localId":"SWSH081","name":"Polteageist"},{"id":"swshp-SWSH082","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH082","localId":"SWSH082","name":"Bunnelby"},{"id":"swshp-SWSH083","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH083","localId":"SWSH083","name":"Alakazam
+        V"},{"id":"swshp-SWSH084","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH084","localId":"SWSH084","name":"Eldegoss
+        V"},{"id":"swshp-SWSH085","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH085","localId":"SWSH085","name":"Boltund
+        V"},{"id":"swshp-SWSH086","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH086","localId":"SWSH086","name":"Cramorant
+        V"},{"id":"swshp-SWSH087","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH087","localId":"SWSH087","name":"Eevee
+        VMAX"},{"id":"swshp-SWSH088","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH088","localId":"SWSH088","name":"Cherrim"},{"id":"swshp-SWSH089","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH089","localId":"SWSH089","name":"Octillery"},{"id":"swshp-SWSH090","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH090","localId":"SWSH090","name":"Houndoom"},{"id":"swshp-SWSH091","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH091","localId":"SWSH091","name":"Bronzong"},{"id":"swshp-SWSH092","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH092","localId":"SWSH092","name":"Charmander"},{"id":"swshp-SWSH093","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH093","localId":"SWSH093","name":"Arrokuda"},{"id":"swshp-SWSH094","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH094","localId":"SWSH094","name":"Jolteon"},{"id":"swshp-SWSH095","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH095","localId":"SWSH095","name":"Eevee"},{"id":"swshp-SWSH096","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH096","localId":"SWSH096","name":"Dragapult
+        V"},{"id":"swshp-SWSH097","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH097","localId":"SWSH097","name":"Dragapult
+        VMAX"},{"id":"swshp-SWSH098","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH098","localId":"SWSH098","name":"Crobat
+        V"},{"id":"swshp-SWSH099","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH099","localId":"SWSH099","name":"Crobat
+        VMAX"},{"id":"swshp-SWSH100","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH100","localId":"SWSH100","name":"Venusaur
+        V"},{"id":"swshp-SWSH101","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH101","localId":"SWSH101","name":"Blastoise
+        V"},{"id":"swshp-SWSH102","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH102","localId":"SWSH102","name":"Venusaur
+        VMAX"},{"id":"swshp-SWSH103","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH103","localId":"SWSH103","name":"Blastoise
+        VMAX"},{"id":"swshp-SWSH104","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH104","localId":"SWSH104","name":"Victini
+        V"},{"id":"swshp-SWSH105","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH105","localId":"SWSH105","name":"Gardevoir
+        V"},{"id":"swshp-SWSH106","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH106","localId":"SWSH106","name":"Single
+        Strike Urshifu V"},{"id":"swshp-SWSH107","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH107","localId":"SWSH107","name":"Rapid
+        Strike Urshifu V"},{"id":"swshp-SWSH108","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH108","localId":"SWSH108","name":"Empoleon
+        V"},{"id":"swshp-SWSH109","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH109","localId":"SWSH109","name":"Tyranitar
+        V"},{"id":"swshp-SWSH110","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH110","localId":"SWSH110","name":"Crobat
+        V"},{"id":"swshp-SWSH111","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH111","localId":"SWSH111","name":"Galarian
+        Rapidash V"},{"id":"swshp-SWSH112","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH112","localId":"SWSH112","name":"Cinderace"},{"id":"swshp-SWSH113","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH113","localId":"SWSH113","name":"Inteleon"},{"id":"swshp-SWSH114","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH114","localId":"SWSH114","name":"Cresselia"},{"id":"swshp-SWSH115","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH115","localId":"SWSH115","name":"Passimian"},{"id":"swshp-SWSH116","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH116","localId":"SWSH116","name":"Morpeko"},{"id":"swshp-SWSH117","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH117","localId":"SWSH117","name":"Phanpy"},{"id":"swshp-SWSH118","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH118","localId":"SWSH118","name":"Eevee"},{"id":"swshp-SWSH119","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH119","localId":"SWSH119","name":"Snorlax"},{"id":"swshp-SWSH120","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH120","localId":"SWSH120","name":"Marnie"},{"id":"swshp-SWSH121","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH121","localId":"SWSH121","name":"Marnie"},{"id":"swshp-SWSH122","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH122","localId":"SWSH122","name":"Flaaffy"},{"id":"swshp-SWSH123","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH123","localId":"SWSH123","name":"Galarian
+        Articuno"},{"id":"swshp-SWSH124","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH124","localId":"SWSH124","name":"Galarian
+        Zapdos"},{"id":"swshp-SWSH125","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH125","localId":"SWSH125","name":"Galarian
+        Moltres"},{"id":"swshp-SWSH126","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH126","localId":"SWSH126","name":"Galarian
+        Slowpoke"},{"id":"swshp-SWSH127","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH127","localId":"SWSH127","name":"Eevee"},{"id":"swshp-SWSH128","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH128","localId":"SWSH128","name":"Eiscue"},{"id":"swshp-SWSH129","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH129","localId":"SWSH129","name":"Umbreon"},{"id":"swshp-SWSH130","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH130","localId":"SWSH130","name":"Ice
+        Rider Calyrex V"},{"id":"swshp-SWSH131","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH131","localId":"SWSH131","name":"Shadow
+        Rider Calyrex V"},{"id":"swshp-SWSH132","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH132","localId":"SWSH132","name":"Dragapult"},{"id":"swshp-SWSH133","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH133","localId":"SWSH133","name":"Lance''s
+        Charizard V"},{"id":"swshp-SWSH134","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH134","localId":"SWSH134","name":"Dark
+        Sylveon V"},{"id":"swshp-SWSH135","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH135","localId":"SWSH135","name":"Zacian
+        LV.X"},{"id":"swshp-SWSH136","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH136","localId":"SWSH136","name":"Mimikyu"},{"id":"swshp-SWSH137","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH137","localId":"SWSH137","name":"Light
+        Toxtricity"},{"id":"swshp-SWSH138","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH138","localId":"SWSH138","name":"Hydreigon
+        C lv.61"},{"id":"swshp-SWSH139","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH139","localId":"SWSH139","name":"Pikachu
+        V-UNION"},{"id":"swshp-SWSH140","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH140","localId":"SWSH140","name":"Pikachu
+        V-UNION"},{"id":"swshp-SWSH141","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH141","localId":"SWSH141","name":"Pikachu
+        V-UNION"},{"id":"swshp-SWSH142","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH142","localId":"SWSH142","name":"Pikachu
+        V-UNION"},{"id":"swshp-SWSH143","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH143","localId":"SWSH143","name":"Pikachu
+        V"},{"id":"swshp-SWSH144","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH144","localId":"SWSH144","name":"Greninja
+        Star"},{"id":"swshp-SWSH145","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH145","localId":"SWSH145","name":"Pikachu
+        V"},{"id":"swshp-SWSH146","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH146","localId":"SWSH146","name":"Poke
+        Ball"},{"id":"swshp-SWSH147","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH147","localId":"SWSH147","name":"Rayquaza
+        V"},{"id":"swshp-SWSH148","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH148","localId":"SWSH148","name":"Noivern
+        V"},{"id":"swshp-SWSH149","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH149","localId":"SWSH149","name":"Flareon
+        V"},{"id":"swshp-SWSH150","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH150","localId":"SWSH150","name":"Vaporeon
+        V"},{"id":"swshp-SWSH151","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH151","localId":"SWSH151","name":"Jolteon
+        V"},{"id":"swshp-SWSH154","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH154","localId":"SWSH154","name":"Dragonite
+        V"},{"id":"swshp-SWSH155","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH155","localId":"SWSH155","name":"Greninja
+        V-UNION"},{"id":"swshp-SWSH156","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH156","localId":"SWSH156","name":"Greninja
+        V-UNION"},{"id":"swshp-SWSH157","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH157","localId":"SWSH157","name":"Greninja
+        V-UNION"},{"id":"swshp-SWSH158","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH158","localId":"SWSH158","name":"Greninja
+        V-UNION"},{"id":"swshp-SWSH159","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH159","localId":"SWSH159","name":"Mewtwo
+        V-UNION"},{"id":"swshp-SWSH160","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH160","localId":"SWSH160","name":"Mewtwo
+        V-UNION"},{"id":"swshp-SWSH161","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH161","localId":"SWSH161","name":"Mewtwo
+        V-UNION"},{"id":"swshp-SWSH162","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH162","localId":"SWSH162","name":"Mewtwo
+        V-UNION"},{"id":"swshp-SWSH163","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH163","localId":"SWSH163","name":"Zacian
+        V-UNION"},{"id":"swshp-SWSH164","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH164","localId":"SWSH164","name":"Zacian
+        V-UNION"},{"id":"swshp-SWSH165","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH165","localId":"SWSH165","name":"Zacian
+        V-UNION"},{"id":"swshp-SWSH166","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH166","localId":"SWSH166","name":"Zacian
+        V-UNION"},{"id":"swshp-SWSH167","image":"https://assets.tcgdex.net/en/swsh/swshp/SWSH167","localId":"SWSH167","name":"Professor
+        Burnet"},{"id":"swshp-SWSH177","localId":"SWSH177","name":"Special Delivery
+        Bidoof"},{"id":"swshp-SWSH178","localId":"SWSH178","name":"Professor''s Research"}],"id":"swshp","legal":{"expanded":true,"standard":false},"logo":"https://assets.tcgdex.net/en/swsh/swshp/logo","name":"SWSH
+        Black Star Promos","releaseDate":"2019-11-15","serie":{"id":"swsh","name":"Sword
+        & Shield"},"symbol":"https://assets.tcgdex.net/univ/swsh/swshp/symbol"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '20391'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 28 Nov 2024 02:09:51 GMT
+      Etag:
+      - W/"4fa7-CQVjHAKW/ESj+Jy9xNoWKeEEsT0"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
