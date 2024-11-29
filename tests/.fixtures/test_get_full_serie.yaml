@@ -1,0 +1,101 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.1.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/series
+  response:
+    body:
+      string: "[{\"id\":\"base\",\"name\":\"Base\",\"logo\":\"https://assets.tcgdex.net/en/base/base1/logo\"},{\"id\":\"misc\",\"name\":\"Miscellaneous\"},{\"id\":\"gym\",\"name\":\"Gym\",\"logo\":\"https://assets.tcgdex.net/en/gym/gym1/logo\"},{\"id\":\"neo\",\"name\":\"Neo\",\"logo\":\"https://assets.tcgdex.net/en/neo/neo1/logo\"},{\"id\":\"lc\",\"name\":\"Legendary
+        Collection\",\"logo\":\"https://assets.tcgdex.net/en/lc/lc/logo\"},{\"id\":\"ecard\",\"name\":\"E-Card\",\"logo\":\"https://assets.tcgdex.net/en/ecard/ecard1/logo\"},{\"id\":\"ex\",\"name\":\"EX\",\"logo\":\"https://assets.tcgdex.net/en/ex/ex1/logo\"},{\"id\":\"pop\",\"name\":\"POP\",\"logo\":\"https://assets.tcgdex.net/en/pop/np/logo\"},{\"id\":\"tk\",\"name\":\"Trainer
+        kits\"},{\"id\":\"dp\",\"name\":\"Diamond & Pearl\",\"logo\":\"https://assets.tcgdex.net/en/dp/dpp/logo\"},{\"id\":\"pl\",\"name\":\"Platinum\",\"logo\":\"https://assets.tcgdex.net/en/pl/pl1/logo\"},{\"id\":\"hgss\",\"name\":\"HeartGold
+        & SoulSilver\",\"logo\":\"https://assets.tcgdex.net/en/hgss/hgss1/logo\"},{\"id\":\"col\",\"name\":\"Call
+        of Legends\",\"logo\":\"https://assets.tcgdex.net/en/col/col1/logo\"},{\"id\":\"bw\",\"name\":\"Black
+        & White\",\"logo\":\"https://assets.tcgdex.net/en/bw/bw1/logo\"},{\"id\":\"mc\",\"name\":\"McDonald's
+        Collection\"},{\"id\":\"xy\",\"name\":\"XY\",\"logo\":\"https://assets.tcgdex.net/en/xy/xyp/logo\"},{\"id\":\"sm\",\"name\":\"Sun
+        & Moon\",\"logo\":\"https://assets.tcgdex.net/en/sm/smp/logo\"},{\"id\":\"swsh\",\"name\":\"Sword
+        & Shield\",\"logo\":\"https://assets.tcgdex.net/en/swsh/swshp/logo\"},{\"id\":\"sv\",\"name\":\"Scarlet
+        & Violet\",\"logo\":\"https://assets.tcgdex.net/en/sv/sv01/logo\"},{\"id\":\"tcgp\",\"name\":\"Pok\xE9mon
+        TCG Pocket\",\"logo\":\"https://assets.tcgdex.net/en/tcgp/A1/logo\"}]"
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '1554'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 28 Nov 2024 02:09:48 GMT
+      Etag:
+      - W/"612-P/HRLSr/lTR7aRKVSelPvT6bAKY"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.1.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/series/base
+  response:
+    body:
+      string: '{"id":"base","logo":"https://assets.tcgdex.net/en/base/base1/logo","name":"Base","sets":[{"cardCount":{"official":102,"total":102},"id":"base1","logo":"https://assets.tcgdex.net/en/base/base1/logo","name":"Base
+        Set"},{"cardCount":{"official":64,"total":64},"id":"base2","logo":"https://assets.tcgdex.net/en/base/base2/logo","name":"Jungle","symbol":"https://assets.tcgdex.net/univ/base/base2/symbol"},{"cardCount":{"official":53,"total":53},"id":"basep","logo":"https://assets.tcgdex.net/en/base/basep/logo","name":"Wizards
+        Black Star Promos","symbol":"https://assets.tcgdex.net/univ/base/basep/symbol"},{"cardCount":{"official":7,"total":7},"id":"wp","name":"W
+        Promotional"},{"cardCount":{"official":62,"total":62},"id":"base3","logo":"https://assets.tcgdex.net/en/base/base3/logo","name":"Fossil","symbol":"https://assets.tcgdex.net/univ/base/base3/symbol"},{"cardCount":{"official":130,"total":130},"id":"base4","logo":"https://assets.tcgdex.net/en/base/base4/logo","name":"Base
+        Set 2","symbol":"https://assets.tcgdex.net/univ/base/base4/symbol"},{"cardCount":{"official":82,"total":83},"id":"base5","logo":"https://assets.tcgdex.net/en/base/base5/logo","name":"Team
+        Rocket","symbol":"https://assets.tcgdex.net/univ/base/base5/symbol"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '1240'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 28 Nov 2024 02:09:49 GMT
+      Etag:
+      - W/"4d8-M8WkmAvuAHJ0bRwmMDFZCQ0RdSE"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

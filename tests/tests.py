@@ -42,6 +42,14 @@ class APITest(unittest.IsolatedAsyncioTestCase):
         self.assertIsInstance(res, Card)
 
     @_use_cassette
+    async def test_get_full_card(self):
+        set = await self.api.set.get("swsh1")
+        card = set.cards[0]
+        self.assertIsInstance(card.sdk, TCGdex)
+        card_full = await card.get_full_card()
+        self.assertIsInstance(card_full, Card)
+
+    @_use_cassette
     async def test_set_resume(self):
         res = await self.api.set.list()
         self.assertIsInstance(res[0], SetResume)
@@ -52,6 +60,14 @@ class APITest(unittest.IsolatedAsyncioTestCase):
         self.assertIsInstance(res, Set)
 
     @_use_cassette
+    async def test_get_full_set(self):
+        serie = await self.api.serie.get("swsh")
+        set = serie.sets[0]
+        self.assertIsInstance(set.sdk, TCGdex)
+        set_full = await set.get_full_set()
+        self.assertIsInstance(set_full, Set)
+
+    @_use_cassette
     async def test_serie_resume(self):
         res = await self.api.serie.list()
         self.assertIsInstance(res[0], SerieResume)
@@ -60,6 +76,14 @@ class APITest(unittest.IsolatedAsyncioTestCase):
     async def test_serie(self):
         res = await self.api.serie.get("swsh")
         self.assertIsInstance(res, Serie)
+
+    @_use_cassette
+    async def test_get_full_serie(self):
+        series = await self.api.serie.list()
+        serie = series[0]
+        self.assertIsInstance(serie.sdk, TCGdex)
+        serie_full = await serie.get_full_serie()
+        self.assertIsInstance(serie_full, Serie)
 
     @_use_cassette
     async def test_variant_list(self):

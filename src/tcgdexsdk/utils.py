@@ -31,6 +31,15 @@ def _urlopen(url: str, _: float) -> str:
 def _from_dict(cls: Type[_TM], data: dict, tcgdex) -> _TM:
     self = from_dict(cls, data)
     self.sdk = tcgdex
+
+    for _, attr_value in self.__dict__.items():
+        if isinstance(attr_value, list):
+            for item in attr_value:
+                if hasattr(item, "sdk"):
+                    item.sdk = tcgdex
+        elif hasattr(attr_value, "sdk"):
+            attr_value.sdk = tcgdex
+
     return self
 
 
