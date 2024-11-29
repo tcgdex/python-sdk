@@ -1,26 +1,28 @@
 
 [project]
 name = "tcgdex-sdk"
-version = "0.10.0"
-description = ""
-authors = [{ name = "Avior", email = "git@avior.me" }, { name = "HellLord77" }]
-dependencies = ["dacite>=1.8.1"]
+# version = "0.0.0"
+dynamic = ["version"]
+description = "The TCGdex Python SDK provides a convenient access to the Open Source TCGdex API."
+authors = [{ name = "HellLord77" }, { name = "Avior", email = "git@avior.me" }]
+dependencies = ["dacite<2.0.0,>=1.8.1"]
 requires-python = ">=3.8"
 readme = "README.md"
 license = { text = "MIT" }
 maintainers = [{ name = "Avior", email = "git@avior.me" }]
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3 :: Only",
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Operating System :: OS Independent",
+	"License :: OSI Approved :: MIT License",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+	"Programming Language :: Python :: 3 :: Only",
+	"Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 [project.urls]
@@ -37,6 +39,9 @@ funding = "https://github.com/sponsors/tcgdex"
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
+#######
+# PDM #
+#######
 [tool.pdm]
 distribution = true
 
@@ -51,13 +56,34 @@ test = "python -m unittest discover -s tests"
 [tool.pdm.build]
 includes = ["src/tcgdexsdk"]
 
+# [tool.pdm.version]
+# source = "scm"
+# fallback_version = "0.0.0"
+# write_to = "tcgdexsdk/version.py"
+# write_template = "__version__ = '{}'"
+
+[tool.pdm.version]
+source = "file"
+path = "src/tcgdexsdk/__init__.py"
+
+########
+# Ruff #
+########
 [tool.ruff]
-line-length = 120
-# exclude = ["build/", "docs/"]
+line-length = 80
+respect-gitignore = true
+include = ["src/**/*.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "UP", "B", "SIM", "I"]
 
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
+
+###########
+# Pyright #
+###########
 [tool.pyright]
 exclude = [".venv"]
 venvPath = "."

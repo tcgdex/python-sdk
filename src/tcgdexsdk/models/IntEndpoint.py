@@ -1,13 +1,9 @@
 from dataclasses import dataclass
-from http.client import HTTPResponse
-from typing import List, Optional, Union
+from typing import List
 
-from tcgdexsdk import utils
-from tcgdexsdk.enums import Extension, Quality
-from tcgdexsdk.models.Card import Card
 from tcgdexsdk.models.CardResume import CardResume
-from tcgdexsdk.models.Serie import Serie
 from tcgdexsdk.models.Model import Model
+
 
 @dataclass
 class IntEndpoint(Model):

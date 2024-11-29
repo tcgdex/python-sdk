@@ -6,7 +6,14 @@ from tcgdexsdk import utils
 from tcgdexsdk.enums import Extension, Quality
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.models.SetResume import SetResume
-from tcgdexsdk.models.subs import CardAbility, CardAttack, CardItem, CardVariants, CardWeakRes, Legal
+from tcgdexsdk.models.subs import (
+    CardAbility,
+    CardAttack,
+    CardItem,
+    CardVariants,
+    CardWeakRes,
+    Legal,
+)
 
 
 @dataclass

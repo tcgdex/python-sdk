@@ -3,10 +3,10 @@ from http.client import HTTPResponse
 from typing import Optional, Union
 
 from tcgdexsdk import utils
-from tcgdexsdk.enums import Extension, Quality
-from tcgdexsdk.models.Card import Card
-from tcgdexsdk.models.Serie import Serie
+from tcgdexsdk.enums import Extension
 from tcgdexsdk.models.Model import Model
+from tcgdexsdk.models.Serie import Serie
+
 
 @dataclass
 class SerieResume(Model):
@@ -38,8 +38,8 @@ class SerieResume(Model):
             return utils.download_image(url)
 
     async def get_full_serie(self) -> Optional[Serie]:
-            """
-            Get the full Card
-            @return: the full card if available
-            """
-            return await self.sdk.serie.get(self.id)
+        """
+        Get the full Card
+        @return: the full card if available
+        """
+        return await self.sdk.serie.get(self.id)

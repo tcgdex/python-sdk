@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.1.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/fr/cards/swsh3-136
+  response:
+    body:
+      string: "{\"category\":\"Pok\xE9mon\",\"id\":\"swsh3-136\",\"illustrator\":\"tetsuya
+        koizumi\",\"image\":\"https://assets.tcgdex.net/fr/swsh/swsh3/136\",\"localId\":\"136\",\"name\":\"Fouinar\",\"rarity\":\"Peu
+        Commune\",\"set\":{\"cardCount\":{\"official\":189,\"total\":201},\"id\":\"swsh3\",\"logo\":\"https://assets.tcgdex.net/fr/swsh/swsh3/logo\",\"name\":\"T\xE9n\xE8bres
+        Embras\xE9es\",\"symbol\":\"https://assets.tcgdex.net/univ/swsh/swsh3/symbol\"},\"variants\":{\"firstEdition\":false,\"holo\":false,\"normal\":true,\"reverse\":true,\"wPromo\":false},\"dexId\":[162],\"hp\":110,\"types\":[\"Incolore\"],\"evolveFrom\":\"Fouinette\",\"stage\":\"Niveau
+        1\",\"attacks\":[{\"cost\":[\"Incolore\"],\"name\":\"Mode Cool\",\"effect\":\"Piochez
+        3 cartes.\"},{\"cost\":[\"Incolore\"],\"name\":\"\xC9clate-Queue\",\"effect\":\"Lancez
+        une pi\xE8ce. Si c'est pile, cette attaque ne fait rien.\",\"damage\":90}],\"weaknesses\":[{\"type\":\"Combat\",\"value\":\"\xD72\"}],\"retreat\":1,\"regulationMark\":\"D\",\"legal\":{\"standard\":false,\"expanded\":true},\"updated\":\"2024-06-18T00:34:39+02:00\"}"
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '941'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 19 Oct 2024 10:11:27 GMT
+      Etag:
+      - W/"3ad-GxFMqSJRz7F04mM69E8WZDa57k0"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

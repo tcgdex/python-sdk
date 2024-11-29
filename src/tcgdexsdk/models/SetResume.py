@@ -3,9 +3,10 @@ from http.client import HTTPResponse
 from typing import Optional, Union
 
 from tcgdexsdk import utils
-from tcgdexsdk.enums import Extension, Quality
+from tcgdexsdk.enums import Extension
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.models.subs import SetCardCountResume
+
 
 @dataclass
 class SetResume(Model):
@@ -51,7 +52,9 @@ class SetResume(Model):
             return f"{self.symbol}.{extension}"
 
     # noinspection PyShadowingBuiltins
-    def get_symbol(self, format: Union[str, Extension]) -> Optional[HTTPResponse]:
+    def get_symbol(
+        self, format: Union[str, Extension]
+    ) -> Optional[HTTPResponse]:
         """
         Get the symbol buffer
         @param format: the image format
