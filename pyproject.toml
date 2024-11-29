@@ -26,11 +26,14 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "https://github.com/tcgdex/python-sdk"
-"Bug Tracker" = "https://github.com/tcgdex/python-sdk/issues"
 homepage = "https://tcgdex.dev"
-documentation = "https://tcgdex.dev/sdks/python"
-"Sponsor Us !" = "https://github.com/sponsors/tcgdex"
+source = "https://github.com/tcgdex/python-sdk"
+download = "https://github.com/tcgdex/python-sdk/releases/latest"
+changelog = "https://github.com/tcgdex/python-sdk/releases/latest"
+releasenotes = "https://github.com/tcgdex/python-sdk/releases/latest"
+documentation = "https://tcgdex.dev"
+issues = "https://github.com/tcgdex/python-sdk/issues"
+funding = "https://github.com/sponsors/tcgdex"
 
 [build-system]
 requires = ["pdm-backend"]
