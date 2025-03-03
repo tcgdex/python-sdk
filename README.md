@@ -14,7 +14,7 @@
 		<img src="https://img.shields.io/github/stars/tcgdex/python-sdk?style=flat-square" alt="Github stars">
 	</a>
 	<a href="https://github.com/tcgdex/python-sdk/actions/workflows/build.yml">
-		<img src="https://img.shields.io/github/actions/workflow/status/tcgdex/python-sdk/build.yml?style=flat-square" alt="the TCGdex Python SDK is released under the MIT license." />
+		<img src="https://img.shields.io/github/actions/workflow/status/tcgdex/python-sdk/build.yml?style=flat-square" alt="Build Status" />
 	</a>
 	<a href="https://discord.gg/peACSRMZ7V">
 		<img src="https://img.shields.io/discord/857231041261076491?color=%235865F2&label=Discord&style=flat-square" alt="Discord Link">
@@ -23,86 +23,133 @@
 
 # TCGdex Python SDK
 
-The TCGdex Python SDK provides a convenient access with the Open Source TCGdex API.
+A fast, type-safe Python SDK for the TCGdex API. Query Pokémon Trading Card Game data easily. 🚀
 
-_The full API/SDK documentation is available at [API Documentation - TCGdex](https://www.tcgdex.dev)_
+```python
+from tcgdexsdk import TCGdex
 
-### Getting Started
+# Fetch a card in one line
+card = await TCGdex("en").card.get("swsh3-136")
+print(f"Found: {card.name} ({card.number}/{card.set.total})")
+```
 
-#### How To install
-
-run the following command:
+## ⚡️ Quick Install
 
 ```bash
 pip install tcgdex-sdk
 ```
 
-#### Getting Started
+## 🚀 Features
 
-**Example: Fetch a Card**
+- **Type-Safe**: Full typing support for better IDE integration
+- **Async/Await**: Built for modern Python applications
+- **Zero Config**: Works out of the box
+- **Multi-Language**: Support for EN, FR, ES, DE, PT, IT
+- **Rich Data**: Access cards, sets, series, rarities, and more
+- **Lightweight**: Minimal dependencies
+
+## 🎯 Quick Examples
+
+### Find Cards by Various Criteria
 
 ```python
-from tcgdexsdk import TCGdex
+sdk = TCGdex("en")
 
-tcgdex = TCGdex("en") # You can also use `Language.EN` TCGdex(Language.EN)
-res = await tcgdex.card.get("swsh1-136")
+# Get the cards made by the illustrator
+cards = await sdk.illustrator.get("5ban Graphics")
+
+# Get the data about the Sword & Shield serie by ID
+series = await sdk.serie.get("swsh")
+
+# Get all cards with 110 HP
+hp_cards = await sdk.hp.get("110")
+
+# List all available rarities
+rarities = await sdk.rarity.list()
 ```
 
-**Other Examples**
+### Working with Sets and Series
 
 ```python
-# fetch a Set using the set's name or ID
-await tcgdex.set.get('Darkness Ablaze')
+# Get set details
+darkness_ablaze = await sdk.set.get("Darkness Ablaze")
+print(f"Set: {darkness_ablaze.name} ({darkness_ablaze.cardCount.total} cards)")
 
-# Fetch a serie using the serie's name or ID
-await tcgdex.serie.get('Sword & Shield')
-
-# Fetch cards possible pokemon cards HP
-await tcgdex.hp.list()
-
-# Fetch Cards with the specific number of HP
-await tcgdex.hp.get('110')
-
-# Fetch cards possible illustrators
-await tcgdex.illustrator.list()
-
-# Fetch Cards with the specific illustrator
-await tcgdex.illustrator.get('tetsuya koizumi')
+# Get series info
+swsh = await sdk.serie.get("swsh")
+print(f"Series: {swsh.name} ({len(swsh.sets)} sets)")
 ```
 
-**Other Endpoints**
+## 🛠 Available Endpoints
 
-Every endpoints below work just like the ones above
-- a function `list` to get the list of elements
-- a function `get` to get details on the element
+### Card Data
+```python
+sdk.card         # Core card data
+sdk.rarity       # Card rarities
+sdk.hp           # HP values
+sdk.illustrator  # Card illustrators
+```
 
-- `variant`: fetch by the variants
-- `trainerType`: fetch trainer cards types
-- `suffix`: fetch differents cards suffixes
-- `stage`: fetch differents cards stages
-- `regulationMark`: Fetch by the regulation mark (letter at the bottom of the card)
-- `energyType`: Fetch different types of energies
-- `dexId`: fetch pokemon Global Pokédex IDS
-- `type`: fetch the cards using the Pokémon type(s)
-- `retreat`: fetch the cards using the retreat count
-- `rarity`: fetch the cards rarities
-- `illustrator`: fetch all the cards illustrators
-- `hp`: fetch the different cards possible HPs
-- `category`: the different cards categories
+### Game Mechanics
+```python
+sdk.type         # Pokémon types
+sdk.energyType   # Energy types
+sdk.retreat      # Retreat costs
+sdk.stage        # Evolution stages
+```
 
+### Card Details
+```python
+sdk.variant        # Card variants
+sdk.suffix         # Card suffixes
+sdk.regulationMark # Regulation marks
+sdk.dexId         # Pokédex IDs
+```
 
-## Contributing
+### Collections
+```python
+sdk.set           # Card sets
+sdk.serie         # Card series
+```
 
-See [CONTRIBUTING.md](https://github.com/tcgdex/python-sdk/blob/master/CONTRIBUTING.md)
+## 🌐 Language Support
 
-TL::DR
+```python
+from tcgdexsdk import TCGdex, Language
 
-- Fork
+# Using string
+sdk = TCGdex("en")  # English
+sdk = TCGdex("fr")  # French
 
-- Commit your changes
+# Using enum (type-safe)
+sdk = TCGdex(Language.EN)
+sdk = TCGdex(Language.FR)
+```
 
-- Pull Request on this Repository
+_[full list of languages available here](https://github.com/tcgdex/cards-database/blob/master/interfaces.d.ts#L1-L5)_
 
-## License
+__
 
-This project is licensed under the MIT License. A copy of the license is available at [LICENSE.md](https://github.com/tcgdex/python-sdk/blob/master/LICENSE.md)
+## 🤝 Contributing
+
+We love contributions! Here's how:
+
+1. 🍴 Fork it
+2. 🌿 Create your feature branch (`git checkout -b feature/amazing`)
+3. 🔧 Make your changes
+4. 🚀 Push to the branch (`git push origin feature/amazing`)
+5. 🎉 Open a PR
+
+## 📘 Documentation
+
+- [Full API Documentation](https://www.tcgdex.dev)
+- [Python SDK Guide](https://www.tcgdex.dev/sdks/python)
+
+## 💬 Community & Support
+
+- [Discord Server](https://discord.gg/peACSRMZ7V) - Get help and discuss features
+- [GitHub Issues](https://github.com/tcgdex/python-sdk/issues) - Bug reports and feature requests
+
+## 📜 License
+
+MIT © [TCGdex](https://github.com/tcgdex)
