@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from typing import Callable
 
 import vcr
@@ -21,6 +22,16 @@ class APITest(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
         self.api = TCGdex(Language.EN)
 
+    @patch("tcgdexsdk.endpoints.Endpoint.fetch")
+    @patch("tcgdexsdk.endpoints.Endpoint.fetch_list")
+    async def test_uri(self, mock_fetch_list, mock_fetch):
+        api = TCGdex(Language.EN)
+        api.URI = "http://localhost:3000/v2"
+        await api.card.get("swsh1-136")
+        mock_fetch.assert_called_once_with(api, "http://localhost:3000/v2/en/cards/swsh1-136", Card)
+        await api.card.list()
+        mock_fetch_list.assert_called_once_with(api, "http://localhost:3000/v2/en/cards", CardResume)
+
     @_use_cassette
     async def test_fr(self):
         tcg = TCGdex(Language.FR)
@@ -29,7 +40,6 @@ class APITest(unittest.IsolatedAsyncioTestCase):
         tcg2 = TCGdex('fr')
         res = await tcg2.card.get('swsh3-136')
         self.assertEqual(res.name, 'Fouinar')
-
 
     @_use_cassette
     async def test_card_resume(self):
