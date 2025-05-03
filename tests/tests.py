@@ -74,7 +74,6 @@ class APITest(unittest.IsolatedAsyncioTestCase):
     @_use_cassette
     async def test_fr(self):
         tcg = TCGdex(Language.FR)
-        tcg.URI = "https://api.tcgdex.net/v2"
         res = await tcg.card.get('swsh3-136')
         self.assertEqual(res.name, 'Fouinar')
         tcg2 = TCGdex('fr')
