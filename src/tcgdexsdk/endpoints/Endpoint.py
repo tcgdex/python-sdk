@@ -26,7 +26,13 @@ class Endpoint(Generic[Item, ListModel]):
         self.endpoint = endpoint
 
     async def get(self, id: str) -> Optional[Item]:
-        return fetch(self.tcgdex, f"https://api.tcgdex.net/v2/{self.tcgdex.language}/{self.endpoint}/{id.replace(' ', '%20')}", self.item_model)
+        return fetch(self.tcgdex, f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}/{id.replace(' ', '%20')}", self.item_model)
 
     async def list(self, query: Optional[Query] = None) -> List[ListModel]:
-        return fetch_list(self.tcgdex, f"https://api.tcgdex.net/v2/{self.tcgdex.language}/{self.endpoint}", self.list_model)
+        return fetch_list(self.tcgdex, f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}", self.list_model)
+
+    def getSync(self, id: str) -> Optional[Item]:
+        return fetch(self.tcgdex, f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}/{id.replace(' ', '%20')}", self.item_model)
+
+    def listSync(self, query: Optional[Query] = None) -> List[ListModel]:
+        return fetch_list(self.tcgdex, f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}", self.list_model)
