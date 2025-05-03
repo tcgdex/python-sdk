@@ -2,7 +2,7 @@ name: Build & Test package
 on:
   push:
     branches:
-      - "*"
+      - master
     tags:
       - v*
   pull_request:
@@ -14,13 +14,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        # Follows the version defined in `pyproject.toml` up to the latest version
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Python
+      - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
