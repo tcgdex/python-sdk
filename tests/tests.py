@@ -12,7 +12,7 @@ from tcgdexsdk.models.SerieResume import SerieResume
 from tcgdexsdk.models.Set import Set
 from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.StringEndpoint import StringEndpoint
-
+from tcgdexsdk.query import Query
 
 def _use_cassette(test: Callable) -> Callable:
     return vcr.use_cassette(f"tests/.fixtures/{test.__name__}.yaml")(test)
@@ -80,6 +80,19 @@ class APITest(unittest.IsolatedAsyncioTestCase):
         res = await tcg2.card.get('swsh3-136')
         self.assertEqual(res.name, 'Fouinar')
 
+    @_use_cassette
+    async def test_query_equal(self):
+        tcg = TCGdex(Language.EN)
+        res = await tcg.card.list(Query().equal('name', 'Furret'))
+        for card in res:
+            self.assertEqual(card.name, 'Furret')
+    
+    @_use_cassette
+    async def test_query_not_equal(self):
+        tcg = TCGdex()
+        res = await tcg.card.list(Query().notEqual('name', 'Furret'))
+        for card in res:
+            self.assertNotEqual(card.name, 'Furret')
 
     @_use_cassette
     async def test_card_resume(self):
