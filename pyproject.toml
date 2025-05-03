@@ -6,6 +6,7 @@ dynamic = ["version"]
 description = "A fast, type-safe Python SDK for the TCGdex API. Query Pokémon Trading Card Game data easily. 🚀"
 authors = [{ name = "HellLord77" }, { name = "Avior", email = "git@avior.me" }]
 dependencies = ["dacite<2.0.0,>=1.8.1"]
+keywords = ["api", "pokemon", "tcg", "sdk", "trading", "card", "pokemon-api", "pokemon-cards", "tcgdex"]
 requires-python = ">=3.8"
 readme = "README.md"
 license = { text = "MIT" }
