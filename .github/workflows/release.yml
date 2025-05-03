@@ -5,6 +5,9 @@ on:
     tags:
       - "*"
 
+env:
+  PYTHON_VERSION: 3.13
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -18,13 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-
-      - name: Install PDM
+      - name: Setup Python & PDM
         uses: pdm-project/setup-pdm@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install the project dependencies
         run: pdm install -d
