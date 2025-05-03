@@ -1,6 +1,7 @@
 import json
 import time
-from functools import lru_cache
+import warnings
+from functools import lru_cache, wraps
 from http.client import HTTPResponse
 from typing import List, Optional, Type, TypeVar
 from urllib.request import Request, urlopen
@@ -62,3 +63,17 @@ def fetch_list(tcgdex, url: str, cls: Type[_T]) -> List[_T]:
 
 def download_image(url: str) -> HTTPResponse:
     return urlopen(_request(url))
+
+
+def deprecated(reason):
+    def decorator(func):
+        message = f"{func.__name__} is deprecated: {reason}"
+
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            warnings.warn(message, category=DeprecationWarning, stacklevel=2)
+            return func(*args, **kwargs)
+
+        return wrapper
+
+    return decorator

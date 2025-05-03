@@ -1,22 +1,21 @@
-name: Release
-
+name: Run tests
 on:
   push:
+    branches:
+      - master
     tags:
-      - "*"
+      - v*
+  pull_request:
+    branches:
+      - master
 
 env:
   PYTHON_VERSION: 3.13
 
 jobs:
-  release:
+  lint:
+    name: Validate Linter
     runs-on: ubuntu-latest
-    permissions:
-      # This permission is needed for private repositories.
-      contents: read
-      # IMPORTANT: this permission is mandatory for trusted publishing
-      id-token: write
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,9 +24,10 @@ jobs:
         uses: pdm-project/setup-pdm@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+          cache: true
 
       - name: Install the project dependencies
         run: pdm install -d
 
-      - name: Build & Publish package to PyPI
-        run: pdm publish
+      - name: Lint the project
+        run: pdm check

@@ -1,7 +1,7 @@
 import unittest
 from typing import Callable
 from unittest.mock import patch
-from warnings import deprecated
+
 import vcr
 
 from tcgdexsdk import Language, TCGdex
@@ -14,6 +14,7 @@ from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.StringEndpoint import StringEndpoint
 from tcgdexsdk.query import Query
 
+
 def _use_cassette(test: Callable) -> Callable:
     return vcr.use_cassette(f"tests/.fixtures/{test.__name__}.yaml")(test)
 
@@ -21,19 +22,17 @@ def _use_cassette(test: Callable) -> Callable:
 class APITest(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
         self.api = TCGdex(Language.EN)
-        
-    
-    @deprecated("this test is deprecated")
+
     @patch("tcgdexsdk.endpoints.Endpoint.fetch")
     @patch("tcgdexsdk.endpoints.Endpoint.fetch_list")
     async def test_uri(self, mock_fetch_list, mock_fetch):
         api = TCGdex(Language.EN)
-        
+
         api.URI = "http://localhost:3000/v2"
-        
+
         await api.card.get("swsh1-136")
         mock_fetch.assert_called_once_with(api, "http://localhost:3000/v2/en/cards/swsh1-136", Card)
-        
+
         await api.card.list()
         mock_fetch_list.assert_called_once_with(api, "http://localhost:3000/v2/en/cards", CardResume)
 
@@ -55,17 +54,17 @@ class APITest(unittest.IsolatedAsyncioTestCase):
     @patch("tcgdexsdk.endpoints.Endpoint.fetch_list")
     async def test_language(self, mock_fetch_list, mock_fetch):
         api = TCGdex()
-        
+
         # Default language should be english
         self.assertEqual(api.getLanguage(), Language.EN)
-        
+
         # Card should be fetched in english
         await api.card.get("swsh1-136")
         mock_fetch.assert_called_once_with(api, f"{api.getEndpoint()}/en/cards/swsh1-136", Card)
 
         # Card should be fetched in french
         api.setLanguage(Language.FR)
-        
+
         # Test that the language is set correctly
         self.assertEqual(api.getLanguage(), Language.FR)
         await api.card.get("swsh1-136")
@@ -74,25 +73,25 @@ class APITest(unittest.IsolatedAsyncioTestCase):
     @_use_cassette
     async def test_fr(self):
         tcg = TCGdex(Language.FR)
-        res = await tcg.card.get('swsh3-136')
-        self.assertEqual(res.name, 'Fouinar')
-        tcg2 = TCGdex('fr')
-        res = await tcg2.card.get('swsh3-136')
-        self.assertEqual(res.name, 'Fouinar')
+        res = await tcg.card.get("swsh3-136")
+        self.assertEqual(res.name, "Fouinar")
+        tcg2 = TCGdex("fr")
+        res = await tcg2.card.get("swsh3-136")
+        self.assertEqual(res.name, "Fouinar")
 
     @_use_cassette
     async def test_query_equal(self):
         tcg = TCGdex(Language.EN)
-        res = await tcg.card.list(Query().equal('name', 'Furret'))
+        res = await tcg.card.list(Query().equal("name", "Furret"))
         for card in res:
-            self.assertEqual(card.name, 'Furret')
-    
+            self.assertEqual(card.name, "Furret")
+
     @_use_cassette
     async def test_query_not_equal(self):
         tcg = TCGdex()
-        res = await tcg.card.list(Query().notEqual('name', 'Furret'))
+        res = await tcg.card.list(Query().notEqual("name", "Furret"))
         for card in res:
-            self.assertNotEqual(card.name, 'Furret')
+            self.assertNotEqual(card.name, "Furret")
 
     @_use_cassette
     async def test_card_resume(self):

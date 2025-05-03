@@ -21,19 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Setup Python ${{ matrix.python-version }} & PDM
+        uses: pdm-project/setup-pdm@v4
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Install PDM
-        uses: pdm-project/setup-pdm@v4
-
-      - name: Cache the Virtual Env
-        uses: actions/cache@v4
-        with:
-          path: ./.venv
-          key: venv-${{ matrix.python-version }}-${{ hashFiles('pdm.lock') }}
+          cache: true
 
       - name: Install the project dependencies
         run: pdm install -d

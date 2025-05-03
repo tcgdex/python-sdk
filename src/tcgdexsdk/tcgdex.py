@@ -1,5 +1,4 @@
 from typing import Union
-from warnings import deprecated
 
 from tcgdexsdk.endpoints.Endpoint import Endpoint
 from tcgdexsdk.enums import Language
@@ -10,6 +9,7 @@ from tcgdexsdk.models.SerieResume import SerieResume
 from tcgdexsdk.models.Set import Set
 from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.StringEndpoint import StringEndpoint
+from tcgdexsdk.utils import deprecated
 
 
 class TCGdex:
@@ -28,7 +28,7 @@ class TCGdex:
     @deprecated("use (get|set)endpoint instead")
     def URI(self):
         """
-            @Deprecated: use `getEndpoint()` or `setEndpoint()` instead.
+        @Deprecated: use `getEndpoint()` or `setEndpoint()` instead.
         """
         return self.getEndpoint()
 
@@ -58,9 +58,7 @@ class TCGdex:
         self.trainerType = Endpoint(self, StringEndpoint, str, "trainer-types")
         self.suffix = Endpoint(self, StringEndpoint, str, "suffixes")
         self.stage = Endpoint(self, StringEndpoint, str, "stages")
-        self.regulationMark = Endpoint(
-            self, StringEndpoint, str, "regulation-marks"
-        )
+        self.regulationMark = Endpoint(self, StringEndpoint, str, "regulation-marks")
         self.energyType = Endpoint(self, StringEndpoint, str, "energy-types")
         self.dexId = Endpoint(self, StringEndpoint, int, "dex-ids")
         self.type = Endpoint(self, StringEndpoint, str, "types")
@@ -69,4 +67,3 @@ class TCGdex:
         self.illustrator = Endpoint(self, StringEndpoint, str, "illustrators")
         self.hp = Endpoint(self, StringEndpoint, int, "hp")
         self.category = Endpoint(self, StringEndpoint, str, "categories")
-

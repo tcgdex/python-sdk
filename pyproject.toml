@@ -70,9 +70,12 @@ path = "src/tcgdexsdk/__init__.py"
 # Ruff #
 ########
 [tool.ruff]
-line-length = 80
+line-length = 120
 respect-gitignore = true
 include = ["src/**/*.py"]
+
+[tool.ruff.lint.pycodestyle]
+ignore-overlong-task-comments = true
 
 [tool.ruff.lint]
 select = ["E", "F", "UP", "B", "SIM", "I"]
