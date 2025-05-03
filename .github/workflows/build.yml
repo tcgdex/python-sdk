@@ -30,7 +30,7 @@ jobs:
         uses: pdm-project/setup-pdm@v4
 
       - name: Cache the Virtual Env
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./.venv
           key: venv-${{ matrix.python-version }}-${{ hashFiles('pdm.lock') }}
