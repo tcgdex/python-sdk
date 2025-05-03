@@ -1,7 +1,7 @@
 import unittest
 from typing import Callable
 from unittest.mock import patch
-from typing_extensions import deprecated
+
 import vcr
 
 from tcgdexsdk import Language, TCGdex
@@ -23,7 +23,6 @@ class APITest(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
         self.api = TCGdex(Language.EN)
 
-    @deprecated("this test is deprecated")
     @patch("tcgdexsdk.endpoints.Endpoint.fetch")
     @patch("tcgdexsdk.endpoints.Endpoint.fetch_list")
     async def test_uri(self, mock_fetch_list, mock_fetch):

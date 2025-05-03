@@ -1,7 +1,5 @@
 from typing import Union
 
-from typing_extensions import deprecated
-
 from tcgdexsdk.endpoints.Endpoint import Endpoint
 from tcgdexsdk.enums import Language
 from tcgdexsdk.models.Card import Card
@@ -11,6 +9,7 @@ from tcgdexsdk.models.SerieResume import SerieResume
 from tcgdexsdk.models.Set import Set
 from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.StringEndpoint import StringEndpoint
+from tcgdexsdk.utils import deprecated
 
 
 class TCGdex:

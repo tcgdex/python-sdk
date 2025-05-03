@@ -10,6 +10,7 @@ from tcgdexsdk.models.SerieResume import SerieResume
 from tcgdexsdk.models.Set import Set
 from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.StringEndpoint import StringEndpoint
+from tcgdexsdk.query import Query
 from tcgdexsdk.tcgdex import TCGdex
 
 __all__ = [
@@ -23,4 +24,5 @@ __all__ = [
     "Set",
     "SetResume",
     "StringEndpoint",
+    "Query",
 ]
