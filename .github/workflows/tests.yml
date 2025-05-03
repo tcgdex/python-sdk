@@ -1,0 +1,41 @@
+name: Run tests
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - master
+      
+env:
+  PYTHON_VERSION: 3.13
+
+jobs:
+  lint:
+    name: Validate Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install PDM
+        uses: pdm-project/setup-pdm@v4
+
+      - name: Cache the Virtual Env
+        uses: actions/cache@v4
+        with:
+          path: ./.venv
+          key: venv-${{ env.PYTHON_VERSION }}-${{ hashFiles('pdm.lock') }}
+
+      - name: Install the project dependencies
+        run: pdm install -d
+
+      - name: Lint the project
+        run: pdm check

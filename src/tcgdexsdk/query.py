@@ -1,5 +1,6 @@
 from urllib.parse import quote
 
+
 class Query:
     def __init__(self):
         self.params = []
@@ -12,7 +13,9 @@ class Query:
         )
 
     def build(self):
-        return '?' + '&'.join(f"{self.encode(item['key'])}={self.encode(item['value'])}" for item in self.params)
+        return '?' + '&'.join(
+            f"{self.encode(item['key'])}={self.encode(item['value'])}" for item in self.params
+        )
 
     def includes(self, key: str, value: str):
         return self.contains(key, value)
@@ -67,7 +70,10 @@ class Query:
 
     def paginate(self, page: int, itemsPerPage: int):
         self.params.append({'key': 'pagination:page', 'value': page})
-        self.params.append({'key': 'pagination:itemsPerPage', 'value': itemsPerPage})
+        self.params.append({
+            'key': 'pagination:itemsPerPage',
+            'value': itemsPerPage
+        })
         return self
         
     def notEqual(self, key: str, value: str):
