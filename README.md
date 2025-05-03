@@ -30,7 +30,7 @@ from tcgdexsdk import TCGdex
 
 # Fetch a card in one line
 card = await TCGdex().card.get("swsh3-136")
-card = await TCGdex().card.getSync("swsh3-136")
+card = TCGdex().card.getSync("swsh3-136")
 print(f"Found: {card.name} ({card.localId}/{card.set.cardCount.total})")
 ```
 
@@ -58,23 +58,23 @@ sdk = TCGdex("en")
 
 # Get the cards made by the illustrator
 cards = await sdk.illustrator.get("5ban Graphics")
-cards = await sdk.illustrator.getSync("5ban Graphics")
+cards = sdk.illustrator.getSync("5ban Graphics")
 
 # Get the data about the Sword & Shield serie by ID
 series = await sdk.serie.get("swsh")
-series = await sdk.serie.getSync("swsh")
+series = sdk.serie.getSync("swsh")
 
 # Get all cards with 110 HP
 hp_cards = await sdk.hp.get("110")
-hp_cards = await sdk.hp.getSync("110")
+hp_cards = sdk.hp.getSync("110")
 
 # List all available rarities
 rarities = await sdk.rarity.list()
-rarities = await sdk.rarity.listSync()
+rarities = sdk.rarity.listSync()
 
 # List all cards with the name being "Furret"
 rarities = await sdk.card.list(Query().equal("name", "Furret"))
-rarities = await sdk.card.listSync(Query().equal("name", "Furret"))
+rarities = sdk.card.listSync(Query().equal("name", "Furret"))
 ```
 
 ### Working with Sets and Series
@@ -82,12 +82,12 @@ rarities = await sdk.card.listSync(Query().equal("name", "Furret"))
 ```python
 # Get set details
 darkness_ablaze = await sdk.set.get("Darkness Ablaze")
-# darkness_ablaze = await sdk.set.getSync("Darkness Ablaze")
+# darkness_ablaze = sdk.set.getSync("Darkness Ablaze")
 print(f"Set: {darkness_ablaze.name} ({darkness_ablaze.cardCount.total} cards)")
 
 # Get series info
 swsh = await sdk.serie.get("swsh")
-# swsh = await sdk.serie.getSync("swsh")
+# swsh = sdk.serie.getSync("swsh")
 print(f"Series: {swsh.name} ({len(swsh.sets)} sets)")
 ```
 
