@@ -2,7 +2,7 @@ name: Build & Test package
 on:
   push:
     branches:
-      - "*"
+      - master
     tags:
       - v*
   pull_request:
@@ -14,14 +14,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        # Follows the version defined in `pyproject.toml` up to the latest version
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Python
-        uses: actions/setup-python@v4
+      - name: Install Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -29,7 +30,7 @@ jobs:
         uses: pdm-project/setup-pdm@v4
 
       - name: Cache the Virtual Env
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./.venv
           key: venv-${{ matrix.python-version }}-${{ hashFiles('pdm.lock') }}

@@ -1,4 +1,5 @@
 from typing import Union
+from warnings import deprecated
 
 from tcgdexsdk.endpoints.Endpoint import Endpoint
 from tcgdexsdk.enums import Language
@@ -14,14 +15,40 @@ from tcgdexsdk.models.StringEndpoint import StringEndpoint
 class TCGdex:
     """The main TCGdex SDK instance"""
 
-    URI = "https://api.tcgdex.net/v2"
-    """The API Endpoint you want to use"""
+    endpoint = "https://api.tcgdex.net/v2"
 
-    def __init__(self, language: Union[str, Language]):
+    def setEndpoint(self, endpoint: str):
+        self.endpoint = endpoint
+        return self
+
+    def getEndpoint(self) -> str:
+        return self.endpoint
+
+    @property
+    @deprecated("use (get|set)endpoint instead")
+    def URI(self):
+        """
+            @Deprecated: use `getEndpoint()` or `setEndpoint()` instead.
+        """
+        return self.getEndpoint()
+
+    @URI.setter
+    def URI(self, value: str):
+        self.setEndpoint(value)
+
+    def setLanguage(self, lang: Union[str, Language]):
+        self.language = lang
+
+    def getLanguage(self) -> Union[str, Language]:
+        return self.language
+
+    def __init__(self, language: Union[str, Language] = Language.EN):
         """
         Create the TCGdex Instance in the specific language
         @param language: the language you want to use, values: [en,fr,es,de,pt,it]
         """
+
+        self.__endpointURL = None
         self.language = language
         self.card = Endpoint(self, Card, CardResume, "cards")
         self.set = Endpoint(self, Set, SetResume, "sets")
@@ -42,3 +69,4 @@ class TCGdex:
         self.illustrator = Endpoint(self, StringEndpoint, str, "illustrators")
         self.hp = Endpoint(self, StringEndpoint, int, "hp")
         self.category = Endpoint(self, StringEndpoint, str, "categories")
+

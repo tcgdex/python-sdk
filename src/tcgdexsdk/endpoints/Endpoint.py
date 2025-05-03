@@ -2,13 +2,7 @@ from typing import Generic, List, Optional, Type, TypeVar, Union
 
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.utils import fetch, fetch_list
-
-
-class Query:
-    @property
-    def params(self):
-        # Implement the logic to get query parameters
-        pass
+from tcgdexsdk.query import Query
 
 # Generic type variables
 Item = TypeVar('Item', bound=Model)
@@ -26,7 +20,19 @@ class Endpoint(Generic[Item, ListModel]):
         self.endpoint = endpoint
 
     async def get(self, id: str) -> Optional[Item]:
-        return fetch(self.tcgdex, f"https://api.tcgdex.net/v2/{self.tcgdex.language}/{self.endpoint}/{id.replace(' ', '%20')}", self.item_model)
+        return fetch(self.tcgdex, f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}/{id.replace(' ', '%20')}", self.item_model)
 
     async def list(self, query: Optional[Query] = None) -> List[ListModel]:
-        return fetch_list(self.tcgdex, f"https://api.tcgdex.net/v2/{self.tcgdex.language}/{self.endpoint}", self.list_model)
+        url = f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}"
+        if query is not None:
+            url += query.build()
+        return fetch_list(self.tcgdex, url, self.list_model)
+
+    def getSync(self, id: str) -> Optional[Item]:
+        return fetch(self.tcgdex, f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}/{id.replace(' ', '%20')}", self.item_model)
+
+    def listSync(self, query: Optional[Query] = None) -> List[ListModel]:
+        url = f"{self.tcgdex.getEndpoint()}/{self.tcgdex.language}/{self.endpoint}"
+        if query is not None:
+            url += query.build()
+        return fetch_list(self.tcgdex, url, self.list_model)

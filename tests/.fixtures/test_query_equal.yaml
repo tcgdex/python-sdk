@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tcgdex.net
+      User-Agent:
+      - '@tcgdex/python-sdk@0.1.0'
+    method: GET
+    uri: https://api.tcgdex.net/v2/en/cards?name=eq%3AFurret
+  response:
+    body:
+      string: '[{"id":"hgss1-21","localId":"21","name":"Furret","image":"https://assets.tcgdex.net/en/hgss/hgss1/21"},{"id":"ex7-22","localId":"22","name":"Furret","image":"https://assets.tcgdex.net/en/ex/ex7/22"},{"id":"dp3-27","localId":"27","name":"Furret","image":"https://assets.tcgdex.net/en/dp/dp3/27"},{"id":"ex12-33","localId":"33","name":"Furret","image":"https://assets.tcgdex.net/en/ex/ex12/33"},{"id":"neo1-35","localId":"35","name":"Furret","image":"https://assets.tcgdex.net/en/neo/neo1/35"},{"id":"ecard2-48","localId":"48","name":"Furret","image":"https://assets.tcgdex.net/en/ecard/ecard2/48"},{"id":"xy2-82","localId":"82","name":"Furret","image":"https://assets.tcgdex.net/en/xy/xy2/82"},{"id":"sv09-119","localId":"119","name":"Furret","image":"https://assets.tcgdex.net/en/sv/sv09/119"},{"id":"swsh3-136","localId":"136","name":"Furret","image":"https://assets.tcgdex.net/en/swsh/swsh3/136"},{"id":"sv09-168","localId":"168","name":"Furret","image":"https://assets.tcgdex.net/en/sv/sv09/168"}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '1000'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 03 May 2025 11:34:43 GMT
+      Etag:
+      - W/"3e8-jj9JpvQvfi9hY5+LOllPMlAJPxk"
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
