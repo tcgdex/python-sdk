@@ -29,8 +29,9 @@ A fast, type-safe Python SDK for the TCGdex API. Query Pokémon Trading Card Gam
 from tcgdexsdk import TCGdex
 
 # Fetch a card in one line
-card = await TCGdex("en").card.get("swsh3-136")
-print(f"Found: {card.name} ({card.number}/{card.set.total})")
+card = await TCGdex().card.get("swsh3-136")
+card = await TCGdex().card.getSync("swsh3-136")
+print(f"Found: {card.name} ({card.localId}/{card.set.cardCount.total})")
 ```
 
 ## ⚡️ Quick Install
@@ -42,11 +43,11 @@ pip install tcgdex-sdk
 ## 🚀 Features
 
 - **Type-Safe**: Full typing support for better IDE integration
-- **Async/Await**: Built for modern Python applications
+- **Async/Await**: Built for modern Python applications and compatible with synchronous operations
 - **Zero Config**: Works out of the box
-- **Multi-Language**: Support for EN, FR, ES, DE, PT, IT
+- **Multi-Language**: Support for English, French, German, Japanese, Chinese, [and more](https://github.com/tcgdex/cards-database/blob/master/interfaces.d.ts#L1-L5)
 - **Rich Data**: Access cards, sets, series, rarities, and more
-- **Lightweight**: Minimal dependencies
+- **Lightweight**: Minimal dependencies (only [dacite](https://github.com/konradhalas/dacite))
 
 ## 🎯 Quick Examples
 
@@ -57,15 +58,23 @@ sdk = TCGdex("en")
 
 # Get the cards made by the illustrator
 cards = await sdk.illustrator.get("5ban Graphics")
+cards = await sdk.illustrator.getSync("5ban Graphics")
 
 # Get the data about the Sword & Shield serie by ID
 series = await sdk.serie.get("swsh")
+series = await sdk.serie.getSync("swsh")
 
 # Get all cards with 110 HP
 hp_cards = await sdk.hp.get("110")
+hp_cards = await sdk.hp.getSync("110")
 
 # List all available rarities
 rarities = await sdk.rarity.list()
+rarities = await sdk.rarity.listSync()
+
+# List all cards with the name being "Furret"
+rarities = await sdk.card.list(Query().equal("name", "Furret"))
+rarities = await sdk.card.listSync(Query().equal("name", "Furret"))
 ```
 
 ### Working with Sets and Series
@@ -73,10 +82,12 @@ rarities = await sdk.rarity.list()
 ```python
 # Get set details
 darkness_ablaze = await sdk.set.get("Darkness Ablaze")
+# darkness_ablaze = await sdk.set.getSync("Darkness Ablaze")
 print(f"Set: {darkness_ablaze.name} ({darkness_ablaze.cardCount.total} cards)")
 
 # Get series info
 swsh = await sdk.serie.get("swsh")
+# swsh = await sdk.serie.getSync("swsh")
 print(f"Series: {swsh.name} ({len(swsh.sets)} sets)")
 ```
 
@@ -124,6 +135,11 @@ sdk = TCGdex("fr")  # French
 # Using enum (type-safe)
 sdk = TCGdex(Language.EN)
 sdk = TCGdex(Language.FR)
+
+# After creating the instance you can change at any time the language
+sdk.setLanguage(Language.FR)
+# or
+sdk.setLanguage("fr")
 ```
 
 _[full list of languages available here](https://github.com/tcgdex/cards-database/blob/master/interfaces.d.ts#L1-L5)_
