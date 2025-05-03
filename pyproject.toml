@@ -3,7 +3,7 @@
 name = "tcgdex-sdk"
 # version = "0.0.0"
 dynamic = ["version"]
-description = "The TCGdex Python SDK provides a convenient access to the Open Source TCGdex API."
+description = "A fast, type-safe Python SDK for the TCGdex API. Query Pokémon Trading Card Game data easily. 🚀"
 authors = [{ name = "HellLord77" }, { name = "Avior", email = "git@avior.me" }]
 dependencies = ["dacite<2.0.0,>=1.8.1"]
 requires-python = ">=3.8"
@@ -26,12 +26,12 @@ classifiers = [
 ]
 
 [project.urls]
-homepage = "https://tcgdex.dev"
+homepage = "https://tcgdex.dev/sdks/python"
 source = "https://github.com/tcgdex/python-sdk"
 download = "https://github.com/tcgdex/python-sdk/releases/latest"
 changelog = "https://github.com/tcgdex/python-sdk/releases/latest"
 releasenotes = "https://github.com/tcgdex/python-sdk/releases/latest"
-documentation = "https://tcgdex.dev"
+documentation = "https://tcgdex.dev/sdks/python"
 issues = "https://github.com/tcgdex/python-sdk/issues"
 funding = "https://github.com/sponsors/tcgdex"
 
