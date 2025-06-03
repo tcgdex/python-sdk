@@ -7,7 +7,7 @@ from tcgdexsdk.enums import Extension
 from tcgdexsdk.models.CardResume import CardResume
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.models.SerieResume import SerieResume
-from tcgdexsdk.models.subs import Legal, SetCardCountResume
+from tcgdexsdk.models.subs import Booster, Legal, SetCardCountResume
 
 
 @dataclass
@@ -35,6 +35,8 @@ class Set(Model):
     """the set legality (won't indicate if a card is banned)"""
     cards: List[CardResume]
     """the cards contained in this set"""
+    boosters: Optional[List[Booster]]
+    """The list of booster the set has"""
 
     def get_logo_url(self, extension: Union[str, Extension]) -> Optional[str]:
         """
