@@ -13,7 +13,7 @@ from tcgdexsdk.models.Set import Set
 from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.StringEndpoint import StringEndpoint
 from tcgdexsdk.query import Query
-
+from tcgdexsdk.models.subs import Booster
 
 def _use_cassette(test: Callable) -> Callable:
     return vcr.use_cassette(f"tests/.fixtures/{test.__name__}.yaml")(test)
@@ -100,8 +100,10 @@ class APITest(unittest.IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_card(self):
-        res = await self.api.card.get("swsh1-136")
+        res = await self.api.card.get("A1-001")
         self.assertIsInstance(res, Card)
+        # Also check if the booster is defined & used
+        self.assertIsInstance(res.boosters[0], Booster)
 
     @_use_cassette
     async def test_get_full_card(self):
@@ -118,8 +120,9 @@ class APITest(unittest.IsolatedAsyncioTestCase):
 
     @_use_cassette
     async def test_set(self):
-        res = await self.api.set.get("swsh1")
+        res = await self.api.set.get("A1")
         self.assertIsInstance(res, Set)
+        self.assertIsInstance(res.boosters[0], Booster)
 
     @_use_cassette
     async def test_get_full_set(self):

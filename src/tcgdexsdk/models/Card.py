@@ -7,6 +7,7 @@ from tcgdexsdk.enums import Extension, Quality
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.models.SetResume import SetResume
 from tcgdexsdk.models.subs import (
+    Booster,
     CardAbility,
     CardAttack,
     CardItem,
@@ -76,6 +77,14 @@ class Card(Model):
     """Card name"""
     image: Optional[str]
     """Card image url without the extension and quality"""
+    boosters: Optional[List[Booster]]
+    """
+    The list of boosters the card is in.
+    
+    if it is `null`, it is available in every boosters.
+    
+    if an `empty array`, it is available in no boosters (additionnal content or other way of obtaining it)
+    """
 
     def get_image_url(
         self, quality: Union[str, Quality], extension: Union[str, Extension]

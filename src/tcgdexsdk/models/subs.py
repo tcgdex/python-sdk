@@ -93,6 +93,14 @@ class SetCardCount:
     """number of cards having an holo version"""
     firstEd: Optional[int]
     """Number of possible cards"""
+    
+@dataclass
+class Booster:
+    id: str
+    name: str
+    logo: Optional[str]
+    artwork_front: Optional[str]
+    artwork_back: Optional[str]
 
 
 @dataclass
