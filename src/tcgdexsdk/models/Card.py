@@ -31,13 +31,13 @@ class Card(Model):
     """The card possible variants"""
     set: SetResume
     """Resume of the set the card belongs to"""
-    dexIDs: Optional[List[int]]
+    dexId: Optional[List[int]]
     """the Pokémon Pokédex IDs (multiple if multiple pokémon appears on the card)"""
     hp: Optional[int]
     """HP of the pokemon"""
     types: Optional[List[str]]
     """Types of the pokemon (multiple because some have multiple in the older sets)"""
-    evolvesFrom: Optional[str]
+    evolveFrom: Optional[str]
     """Name of the pokemon this one evolves from"""
     description: Optional[str]
     """the Pokémon Pokédex like description"""
