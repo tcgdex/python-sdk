@@ -7,7 +7,7 @@ from tcgdexsdk.enums import Extension
 from tcgdexsdk.models.CardResume import CardResume
 from tcgdexsdk.models.Model import Model
 from tcgdexsdk.models.SerieResume import SerieResume
-from tcgdexsdk.models.subs import Booster, Legal, SetCardCountResume
+from tcgdexsdk.models.subs import Booster, Legal, SetAbbreviations, SetCardCountResume
 
 
 @dataclass
@@ -37,6 +37,8 @@ class Set(Model):
     """the cards contained in this set"""
     boosters: Optional[List[Booster]]
     """The list of booster the set has"""
+    abbreviations: Optional[SetAbbreviations]
+    """The set abbreviations (official and in other languages if available)"""
 
     def get_logo_url(self, extension: Union[str, Extension]) -> Optional[str]:
         """
@@ -65,9 +67,7 @@ class Set(Model):
         if self.symbol:
             return f"{self.symbol}.{extension}"
 
-    def get_symbol(
-        self, format: Union[str, Extension]
-    ) -> Optional[HTTPResponse]:
+    def get_symbol(self, format: Union[str, Extension]) -> Optional[HTTPResponse]:
         """
         Get the symbol buffer
         @param format: the image format

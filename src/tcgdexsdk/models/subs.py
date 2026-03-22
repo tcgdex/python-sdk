@@ -93,7 +93,8 @@ class SetCardCount:
     """number of cards having an holo version"""
     firstEd: Optional[int]
     """Number of possible cards"""
-    
+
+
 @dataclass
 class Booster:
     id: str
@@ -111,3 +112,45 @@ class SetCardCountResume:
     """total of number of cards"""
     official: int
     """number of cards officialy (on the bottom of each cards)"""
+
+
+@dataclass
+class SetAbbreviations:
+    """Set abbreviations"""
+
+    official: Optional[str]
+    """Official abbreviation acronym used on the cards (English version)"""
+    fr: Optional[str]
+    """French abbreviation acronym used on the cards"""
+    es: Optional[str]
+    """Spanish abbreviation acronym used on the cards"""
+    es_mx: Optional[str]
+    """Spanish (Mexico) abbreviation acronym used on the cards"""
+    it: Optional[str]
+    """Italian abbreviation acronym used on the cards"""
+    pt: Optional[str]
+    """Portuguese abbreviation acronym used on the cards"""
+    pt_br: Optional[str]
+    """Portuguese (Brazil) abbreviation acronym used on the cards"""
+    pt_pt: Optional[str]
+    """Portuguese (Portugal) abbreviation acronym used on the cards"""
+    de: Optional[str]
+    """German abbreviation acronym used on the cards"""
+    nl: Optional[str]
+    """Dutch abbreviation acronym used on the cards"""
+    pl: Optional[str]
+    """Polish abbreviation acronym used on the cards"""
+    ru: Optional[str]
+    """Russian abbreviation acronym used on the cards"""
+    ja: Optional[str]
+    """Japanese abbreviation acronym used on the cards"""
+    ko: Optional[str]
+    """Korean abbreviation acronym used on the cards"""
+    zh_tw: Optional[str]
+    """Chinese (Taiwan) abbreviation acronym used on the cards"""
+    id: Optional[str]
+    """Indonesian abbreviation acronym used on the cards"""
+    th: Optional[str]
+    """Thai abbreviation acronym used on the cards"""
+    zh_cn: Optional[str]
+    """Chinese (China) abbreviation acronym used on the cards"""
